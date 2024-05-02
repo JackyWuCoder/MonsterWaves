@@ -301,6 +301,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  gravity: -9.8
+  jumpHeight: 1.5
+  cam: {fileID: 0}
+  xSensitivity: 30
+  ySensitivity: 30
 --- !u!114 &1678505669109069278
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,6 +19,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private float xSensitivity = 30.0f;
     [SerializeField] private float ySensitivity = 30.0f;
+
+    [Header("Crouch")]
+    [SerializeField] private bool isCrouching = false;
+    [SerializeField] private float crouchTimer = 0f;
+    [SerializeField] private bool lerpCrouch = false;
+
+    [Header("Sprint")]
+    [SerializeField] private bool isSprinting = false;
     
     private void Start()
     {
@@ -29,6 +37,21 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         isGrounded = controller.isGrounded;
+        if (lerpCrouch)
+        {
+            crouchTimer += Time.deltaTime;
+            float t = crouchTimer / 1;
+            t *= t;
+            if (isCrouching)
+                controller.height = Mathf.Lerp(controller.height, 1, t);
+            else
+                controller.height = Mathf.Lerp(controller.height, 2, t);
+            if (t > 1) 
+            {
+                lerpCrouch = false;
+                crouchTimer = 0f;
+            }
+        }
     }
 
     // Receive inputs from PlayerInputManager.cs and apply them to our character controller.
@@ -64,9 +87,29 @@ public class PlayerController : MonoBehaviour
         // Calculate camera rotation for looking up and down.
         xRotation -= mouseY * ySensitivity * Time.deltaTime;
         xRotation = Mathf.Clamp(xRotation, -80.0f, 80.0f);
-        // Apply this to our camera transform.
-        cam.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        // Apply this to our camera's parent (eyes) transform.
+        cam.transform.parent.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         // Rotate player to look left and right.
         transform.Rotate(Vector3.up * mouseX * xSensitivity * Time.deltaTime);
+    }
+
+    public void PlayerCrouch()
+    {
+        isCrouching = !isCrouching;
+        crouchTimer = 0;
+        lerpCrouch = true;
+    }
+
+    public void PlayerSprint()
+    {
+        isSprinting = !isSprinting;
+        if (isSprinting)
+        {
+            speed = 8.0f;
+        }
+        else
+        {
+            speed = 5.0f;
+        }
     }
 }
