@@ -14,9 +14,8 @@ public class PlayerInputManager : MonoBehaviour
         controller = GetComponent<PlayerController>();
         // When player jump is performed, use a callback context to call the PlayerJump() method.
         playerInput.OnFoot.Jump.performed += ctx => controller.PlayerJump();
-        playerInput.OnFoot.Crouch.performed += ctx => controller.PlayerCrouch();
-        playerInput.OnFoot.Sprint.performed += ctx => controller.PlayerSprint();
-
+        playerInput.OnFoot.Crouch.performed += ctx => controller.PlayerCrouch(); // toggles
+        playerInput.OnFoot.Sprint.performed += ctx => controller.PlayerSprint(); // toggles
     }
 
     private void FixedUpdate()
