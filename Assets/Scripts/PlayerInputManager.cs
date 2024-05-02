@@ -12,6 +12,8 @@ public class PlayerInputManager : MonoBehaviour
     {
         playerInput = new PlayerInput();
         controller = GetComponent<PlayerController>();
+        // When player jump is performed, use a callback context to call the PlayerJump() method.
+        playerInput.OnFoot.Jump.performed += ctx => controller.PlayerJump();
     }
 
     private void FixedUpdate()
