@@ -11,6 +11,7 @@ public class PlayerInputManager : MonoBehaviour
     private void Awake()
     {
         playerInput = new PlayerInput();
+        controller = GetComponent<PlayerController>();
     }
 
     private void FixedUpdate()
