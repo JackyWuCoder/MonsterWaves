@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [Header("Crouch")]
     [SerializeField] private bool isCrouching = false;
     [SerializeField] private float crouchTimer = 0f;
-    [SerializeField] private bool lerpCrouch = false;
+    [SerializeField] private bool isLerpCrouching = false;
 
     [Header("Sprint")]
     [SerializeField] private bool isSprinting = false;
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         isGrounded = controller.isGrounded;
-        if (lerpCrouch)
+        if (isLerpCrouching)
         {
             crouchTimer += Time.deltaTime;
             float t = crouchTimer / 1;
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
                 controller.height = Mathf.Lerp(controller.height, 2, t);
             if (t > 1) 
             {
-                lerpCrouch = false;
+                isLerpCrouching = false;
                 crouchTimer = 0f;
             }
         }
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
     {
         isCrouching = !isCrouching;
         crouchTimer = 0;
-        lerpCrouch = true;
+        isLerpCrouching = true;
     }
 
     public void PlayerSprint()
