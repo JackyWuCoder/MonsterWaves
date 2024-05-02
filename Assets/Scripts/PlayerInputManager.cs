@@ -18,8 +18,14 @@ public class PlayerInputManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Tell the player controller to move using the value from our movement action.
-        controller.PlayerMove(playerInput.OnFoot.Movement.ReadValue<Vector2>());
+        // Tell the player controller to move using the value from our "Move" action.
+        controller.PlayerMove(playerInput.OnFoot.Move.ReadValue<Vector2>());
+    }
+
+    private void LateUpdate()
+    {
+        // Tell the player controller to look using the value from our "Look" action.
+        controller.PlayerLook(playerInput.OnFoot.Look.ReadValue<Vector2>());
     }
 
     private void OnEnable()
