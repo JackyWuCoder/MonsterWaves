@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         controller = GetComponent<CharacterController>();
     }
 
@@ -69,7 +70,6 @@ public class PlayerController : MonoBehaviour
         }
         // Player movement along the y-axis.
         controller.Move(playerVelocity * Time.deltaTime);
-        Debug.Log(playerVelocity.y);
     }
 
     public void PlayerJump()
