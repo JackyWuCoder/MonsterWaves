@@ -7,9 +7,16 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private float rayDistance = 3.0f;
     [SerializeField] private LayerMask interactableMask;
- 
+    private PlayerUI playerUI;
+
+    private void Start()
+    {
+        playerUI = GetComponent<PlayerUI>();
+    }
+
     private void Update()
     {
+        playerUI.UpdateText(string.Empty);
         // Creates a ray at the center of the camera, shooting outwards.
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
         Debug.DrawRay(ray.origin, ray.direction * rayDistance);
@@ -18,7 +25,7 @@ public class PlayerInteract : MonoBehaviour
         {
             if (hitInfo.collider.GetComponent<Interactable>() != null)
             {
-                Debug.Log(hitInfo.collider.GetComponent<Interactable>().GetPromptMessage());
+                playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().GetPromptMessage());
             }
         }
     }

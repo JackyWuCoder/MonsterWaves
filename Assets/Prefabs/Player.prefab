@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6577930747359578687}
   - component: {fileID: 4560458436886327516}
   m_Layer: 0
-  m_Name: PlayerVisual
+  m_Name: Player Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 1178709926984209794}
   - component: {fileID: 1678505669109069278}
   - component: {fileID: 4766004741970994657}
+  - component: {fileID: 6916967869410191158}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -366,3 +367,16 @@ MonoBehaviour:
   interactableMask:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &6916967869410191158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8906655254846294012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb0093adc27a8f448bb522535d3c42e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promptText: {fileID: 0}
