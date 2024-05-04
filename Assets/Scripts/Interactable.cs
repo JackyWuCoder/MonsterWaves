@@ -19,4 +19,8 @@ public abstract class Interactable : MonoBehaviour
         // We wont have any code written in this function.
         // This is a template function to be overridden by our subclasses.
     }
+
+    public string GetPromptMessage() {
+        return promptMessage;
+    }
 }
