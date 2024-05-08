@@ -39,4 +39,9 @@ public class PlayerInputManager : MonoBehaviour
     {
         playerInput.OnFoot.Disable();
     }
+
+    public PlayerInput GetPlayerInput()
+    {
+        return playerInput;
+    }
 }

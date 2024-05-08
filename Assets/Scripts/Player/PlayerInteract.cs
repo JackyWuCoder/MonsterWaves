@@ -8,10 +8,12 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private float rayDistance = 3.0f;
     [SerializeField] private LayerMask interactableMask;
     private PlayerUI playerUI;
+    private PlayerInputManager playerInputManager;
 
     private void Start()
     {
         playerUI = GetComponent<PlayerUI>();
+        playerInputManager = GetComponent<PlayerInputManager>();
     }
 
     private void Update()
@@ -25,7 +27,13 @@ public class PlayerInteract : MonoBehaviour
         {
             if (hitInfo.collider.GetComponent<Interactable>() != null)
             {
-                playerUI.UpdateText(hitInfo.collider.GetComponent<Interactable>().GetPromptMessage());
+                Interactable interactable = hitInfo.collider.GetComponent<Interactable>();
+                playerUI.UpdateText(interactable.GetPromptMessage());
+                PlayerInput playerInput = playerInputManager.GetPlayerInput();
+                if (playerInput.OnFoot.Interact.triggered)
+                {
+                    interactable.BaseInteract();
+                }
             }
         }
     }
