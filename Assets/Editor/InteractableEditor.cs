@@ -7,18 +7,17 @@ public class InteractableEditor : Editor
     {
         Interactable interactable = (Interactable)target;
         base.OnInspectorGUI();
-        if (interactable.GetIsUsingEvents())
+        if (interactable.useEvents)
         {
             if (interactable.GetComponent<InteractionEvent>() == null)
-            {
                 // We are using events, add the component.
                 interactable.gameObject.AddComponent<InteractionEvent>();
-            }
-            else {
-                // We are not using events, remove the component.
-                if (interactable.GetComponent<InteractionEvent>() != null)
-                    DestroyImmediate(interactable.GetComponent<InteractionEvent>());
-            }
+        }
+        else
+        {
+            // We are not using events, remove the component.
+            if (interactable.GetComponent<InteractionEvent>() != null)
+                DestroyImmediate(interactable.GetComponent<InteractionEvent>());
         }
     }
 }

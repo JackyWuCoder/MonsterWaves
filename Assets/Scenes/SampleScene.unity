@@ -496,6 +496,7 @@ GameObject:
   - component: {fileID: 830556283}
   - component: {fileID: 830556282}
   - component: {fileID: 830556285}
+  - component: {fileID: 830556286}
   m_Layer: 6
   m_Name: Keypad
   m_TagString: Untagged
@@ -601,7 +602,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f911e34263073429c2ec3b38ce5fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useEvents: 1
   promptMessage: Use Keypad
+  door: {fileID: 1109585507}
+--- !u!114 &830556286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830556280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e74eeb822429e648887863548404e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1359276403}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_material
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 8b29aaa3eec7468097ff07adfcf29ac9,
+            type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,6 +855,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1109585508}
+  - component: {fileID: 1109585509}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -848,6 +880,27 @@ Transform:
   - {fileID: 1689808097}
   m_Father: {fileID: 1573109739}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1109585509
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109585507}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ad639cb44cbaf048b6961be571d89b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1359276400
 GameObject:
   m_ObjectHideFlags: 0
