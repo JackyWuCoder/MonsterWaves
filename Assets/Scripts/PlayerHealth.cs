@@ -27,6 +27,10 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(Random.Range(5, 10));
         }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+           RestoreHealth(Random.Range(5, 10));
+        }
     }
 
     public void UpdateHealthUI()
@@ -48,6 +52,12 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        lerpTimer = 0f;
+    }
+
+    public void RestoreHealth(float healAmount) 
+    {
+        health += healAmount;
         lerpTimer = 0f;
     }
 }
