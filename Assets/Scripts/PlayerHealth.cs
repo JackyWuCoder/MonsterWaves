@@ -23,14 +23,6 @@ public class PlayerHealth : MonoBehaviour
     {
         health = Mathf.Clamp(health, 0, maxHealth);
         UpdateHealthUI();
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            TakeDamage(Random.Range(5, 10));
-        }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-           RestoreHealth(Random.Range(5, 10));
-        }
     }
 
     public void UpdateHealthUI()
@@ -48,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
             percentComplete *= percentComplete;
             backHealthBar.fillAmount = Mathf.Lerp(fillB, hFraction, percentComplete);
         }
-        if (fillF > hFraction)
+        if (fillF < hFraction)
         {
             backHealthBar.color = Color.green;
             backHealthBar.fillAmount = hFraction;
