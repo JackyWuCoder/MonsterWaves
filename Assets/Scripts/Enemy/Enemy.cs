@@ -31,6 +31,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         CanSeePlayer();
+        currentState = stateMachine.GetActiveState().ToString();
     }
 
     public Path GetPath()
@@ -47,7 +48,6 @@ public class Enemy : MonoBehaviour
             {
                 Vector3 playerDirection = player.transform.position - transform.position - (Vector3.up * eyeHeight);
                 float angleToPlayer = Vector3.Angle(playerDirection, transform.forward);
-                Debug.Log(angleToPlayer);
                 if((angleToPlayer >= -fieldOfView) && (angleToPlayer <= fieldOfView))
                 {
                     Debug.Log("Sees Player!");
