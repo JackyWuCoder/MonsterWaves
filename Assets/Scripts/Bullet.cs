@@ -7,15 +7,17 @@ public class Bullet : MonoBehaviour
     private float bulletDamage = 10;
     private void OnCollisionEnter(Collision collision)
     {
-        Transform target = collision.transform;
-        if (target.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            target.GetComponent<PlayerHealth>().TakeDamage(bulletDamage);
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(bulletDamage);
         }
-        if (target.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
+            Debug.Log("hit " + collision.gameObject.name + " !");
         }
-        Debug.Log("hit " + collision.gameObject.name + " !");
+        if (collision.gameObject.CompareTag("Target"))
+        { 
+        }
         Destroy(gameObject);
     }
 }
