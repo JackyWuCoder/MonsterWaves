@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 433864654944528253}
   m_Layer: 0
-  m_Name: BulletSpawnPoint (1)
+  m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

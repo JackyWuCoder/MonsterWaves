@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
     [Header("Bullet")]
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform bulletSpawn;
-    [SerializeField] private float bulletVelocity = 100.0f;
+    [SerializeField] private float bulletVelocity = 500.0f;
     [SerializeField] private float bulletPrefabLifeTime = 3.0f;
 
     public enum ShootingMode

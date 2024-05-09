@@ -4117,6 +4117,11 @@ PrefabInstance:
       propertyPath: promptText
       value: 
       objectReference: {fileID: 208807644}
+    - target: {fileID: 8133809573564475030, guid: 8f059af48abed7a42a9801fd2efac83e,
+        type: 3}
+      propertyPath: bulletVelocity
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 8906655254846294012, guid: 8f059af48abed7a42a9801fd2efac83e,
         type: 3}
       propertyPath: m_Name
