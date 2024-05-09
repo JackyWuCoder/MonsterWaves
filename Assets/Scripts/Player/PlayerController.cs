@@ -17,8 +17,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Look")]
     [SerializeField] private Camera cam;
-    [SerializeField] private float xSensitivity = 30.0f;
-    [SerializeField] private float ySensitivity = 30.0f;
+    [SerializeField] private float mouseSensitivity = 30.0f;
 
     [Header("Crouch")]
     [SerializeField] private bool isCrouching = false;
@@ -30,6 +29,7 @@ public class PlayerController : MonoBehaviour
     
     private void Start()
     {
+        // Locking the cursor to the middle of the screen and making it invisible.
         Cursor.lockState = CursorLockMode.Locked;
         controller = GetComponent<CharacterController>();
     }
@@ -82,15 +82,16 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerLook(Vector2 input)
     {
-        float mouseX = input.x;
-        float mouseY = input.y;
-        // Calculate camera rotation for looking up and down.
-        xRotation -= mouseY * ySensitivity * Time.deltaTime;
+        float mouseX = input.x * mouseSensitivity * Time.deltaTime;
+        float mouseY = input.y * mouseSensitivity* Time.deltaTime;
+
+        // Camera rotation arcund the x-axis (look up and down).
+        xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -80.0f, 80.0f);
         // Apply this to our camera's parent (eyes) transform.
         cam.transform.parent.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         // Rotate player to look left and right.
-        transform.Rotate(Vector3.up * mouseX * xSensitivity * Time.deltaTime);
+        transform.Rotate(Vector3.up * mouseX);
     }
 
     public void PlayerCrouch()
