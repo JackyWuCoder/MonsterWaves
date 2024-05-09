@@ -1006,7 +1006,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4423034355683327326}
-  - component: {fileID: 2991646148284781377}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -1030,28 +1029,6 @@ Transform:
   - {fileID: 8522640553878889334}
   m_Father: {fileID: 237620021025291352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2991646148284781377
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919644644822040565}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &987582978891891317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,7 +2637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6990481042466603811}
-  - component: {fileID: 1651622699925371274}
+  - component: {fileID: 6699881868136408156}
   m_Layer: 0
   m_Name: Armour
   m_TagString: Untagged
@@ -2718,7 +2695,7 @@ Transform:
   - {fileID: 4786975073171653969}
   m_Father: {fileID: 237620021025291352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1651622699925371274
+--- !u!64 &6699881868136408156
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2737,7 +2714,7 @@ MeshCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &3009875057747418010
@@ -3689,7 +3666,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1114855088388886340}
-  - component: {fileID: 2819222685145636718}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -3717,28 +3693,6 @@ Transform:
   - {fileID: 6476850417318967786}
   m_Father: {fileID: 237620021025291352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2819222685145636718
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4184060065266708264}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &4202532153791036141
 GameObject:
   m_ObjectHideFlags: 0
@@ -3906,6 +3860,9 @@ GameObject:
   - component: {fileID: 7022837142073018602}
   - component: {fileID: 7120950273580065540}
   - component: {fileID: 1948767489512284987}
+  - component: {fileID: 5317388070628717058}
+  - component: {fileID: 1324965170412236647}
+  - component: {fileID: 8584627417894332996}
   m_Layer: 0
   m_Name: Cyber Monster
   m_TagString: Enemy
@@ -4011,6 +3968,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c6b2e3262354a4785cff92113c0b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &5317388070628717058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4349080128417467894}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4, y: 1.9, z: 0.4}
+  m_Center: {x: 0.25, y: 0.8, z: 0}
+--- !u!65 &1324965170412236647
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4349080128417467894}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4, y: 1.9, z: 0.4}
+  m_Center: {x: -0.25, y: 0.7, z: 0}
+--- !u!65 &8584627417894332996
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4349080128417467894}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4, y: 0.3, z: 0.4}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &4350551226227607256
 GameObject:
   m_ObjectHideFlags: 0

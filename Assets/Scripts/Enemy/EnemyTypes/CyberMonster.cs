@@ -49,6 +49,5 @@ public class CyberMonster : Enemy
         // Add force to the rigidbody of the bullet.
         bullet.GetComponent<Rigidbody>().velocity = Quaternion.AngleAxis(Random.Range(-3.0f, 3.0f), Vector3.up) * shootDirection * bulletVelocity;
         animator.Play("Shoot", 1);
-        Debug.Log("CyberMonster is Shooting.");
     }
 }

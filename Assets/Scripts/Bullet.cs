@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private float bulletDamage = 10;
+    [SerializeField] private float bulletDamage = 10;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -17,6 +18,10 @@ public class Bullet : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Target"))
         { 
+        }
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            Debug.Log("hit a wall");
         }
         Destroy(gameObject);
     }
