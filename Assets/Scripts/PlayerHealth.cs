@@ -35,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthUI();
         if (overlay.color.a > 0)
         {
-            if (health < 30)
+            if (health <= 30)
                 return;
             durationTimer += Time.deltaTime;
             if (durationTimer > duration)
