@@ -15,5 +15,13 @@ public class ZombieAttackState : AttackState
     {
         base.Perform();
         // Enemy can see the player.
+        if (!enemy.CanSeePlayer())
+        {
+            if (losePlayerTimer > 8)
+            {
+                // Change to the search state
+                stateMachine.ChangeState(new ZombiePatrolState());
+            }
+        }
     }
 }

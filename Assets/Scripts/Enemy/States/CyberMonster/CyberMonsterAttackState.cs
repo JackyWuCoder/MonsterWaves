@@ -26,6 +26,14 @@ public class CyberMonsterAttackState : AttackState
                 shotTimer = 0;
             }
         }
+        else
+        {
+            if (losePlayerTimer > 8)
+            {
+                // Change to the search state
+                stateMachine.ChangeState(new CyberMonsterPatrolState());
+            }
+        }
     }
 
     // Start is called before the first frame update

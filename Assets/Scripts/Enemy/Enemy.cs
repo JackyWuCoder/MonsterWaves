@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     protected NavMeshAgent agent;
-    protected GameObject player;
+    [SerializeField] protected GameObject player;
 
     [SerializeField] protected Path path;
     
@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
                     RaycastHit hitInfo = new RaycastHit();
                     if (Physics.Raycast(ray, out hitInfo, sightDistance))
                     {
-                        if (hitInfo.transform.gameObject != player)
+                        if (hitInfo.transform.gameObject.CompareTag("Player"))
                         {
                             return true;
                         }
