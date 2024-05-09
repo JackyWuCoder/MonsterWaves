@@ -8,11 +8,14 @@ public class EnemyBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Debug.Log("hit " + collision.gameObject.name + " !");
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(bulletDamage);
-            Destroy(gameObject);
         }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            
+        }
+        Destroy(gameObject);
     }
 }

@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     [Header("Shooting")]
     [SerializeField] bool isShooting, readyToShoot;
     private bool allowReset = true;
-    [SerializeField] private float shootingDelay = 2.0f;
+    [SerializeField] private float shootingDelay = 0f;
 
     // Bursting
     [Header("Bursting")]
@@ -114,7 +114,7 @@ public class Weapon : MonoBehaviour
             // Shooting at the air
             targetPoint = ray.GetPoint(100);
         }
-        Vector3 direction = targetPoint - ray.origin;
+        Vector3 direction = targetPoint - bulletSpawn.position;
         float x = UnityEngine.Random.Range(-spreadIntensity, spreadIntensity);
         float y = UnityEngine.Random.Range(-spreadIntensity, spreadIntensity);
         // Returning the shooting direction and spread.

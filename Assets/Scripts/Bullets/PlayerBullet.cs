@@ -8,24 +8,20 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            Debug.Log("hit " + collision.gameObject.name + " !");
-            CreateBulletImpactEffect(collision);
-            Destroy(gameObject);
+            
         }
-        else if (collision.gameObject.CompareTag("Target"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Environment"))
         {
-            Debug.Log("hit " + collision.gameObject.name + " !");
-            CreateBulletImpactEffect(collision);
-            Destroy(gameObject);
+            
         }
-        else if (collision.gameObject.CompareTag("Wall"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Target"))
         {
-            Debug.Log("hit a wall");
-            CreateBulletImpactEffect(collision);
-            Destroy(gameObject);
+
         }
+        CreateBulletImpactEffect(collision);
+        Destroy(gameObject);
     }
 
     private void CreateBulletImpactEffect(Collision objectWeHit)
