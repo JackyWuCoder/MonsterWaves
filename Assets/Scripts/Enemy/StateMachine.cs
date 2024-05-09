@@ -23,6 +23,11 @@ public class StateMachine : MonoBehaviour
         }
     }
 
+    public void Initialize()
+    {
+       // Set up default state.
+    }
+
     public void ChangeState(BaseState newState)
     {
         // Check if there is an active state.
