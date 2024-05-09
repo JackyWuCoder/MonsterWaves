@@ -5,27 +5,27 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    private StateMachine stateMachine;
-    private NavMeshAgent agent;
-    private GameObject player;
+    protected StateMachine stateMachine;
+    protected NavMeshAgent agent;
+    protected GameObject player;
 
     // Only for debugging purposes.
-    [SerializeField] private string currentState;
-    [SerializeField] private Path path;
+    [SerializeField] protected string currentState;
+    [SerializeField] protected Path path;
 
     [Header("Sight Values")]
-    [SerializeField] private float sightDistance = 20.0f;
-    [SerializeField] private float fieldOfView = 85.0f;
+    [SerializeField] protected float sightDistance = 20.0f;
+    [SerializeField] protected float fieldOfView = 85.0f;
     // Allows for the enemy to see at eye level.
-    [SerializeField] private float eyeHeight;
+    [SerializeField] protected float eyeHeight;
 
     [Header("Weapon Values")]
-    [SerializeField] private Transform BulletSpawnPoint;
+    [SerializeField] protected Transform BulletSpawnPoint;
 
     public NavMeshAgent Agent { get => agent; }
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         stateMachine = GetComponent<StateMachine>();
         agent = GetComponent<NavMeshAgent>();
@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         CanSeePlayer();
         currentState = stateMachine.GetActiveState().ToString();
