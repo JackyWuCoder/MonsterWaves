@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -54,6 +55,11 @@ public class Path : MonoBehaviour
             return;
         else
             DrawPath();
+    }
+
+    public static object Combine(string dataPath, string v)
+    {
+        throw new NotImplementedException();
     }
 #endif
 }
