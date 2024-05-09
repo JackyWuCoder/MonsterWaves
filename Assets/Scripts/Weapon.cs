@@ -68,13 +68,13 @@ public class Weapon : MonoBehaviour
     private void FireWeapon()
     {
         readyToShoot = false;
-        Vector3 shootingDirectiion = CalculateDirectionAndSpread().normalized;
+        Vector3 shootingDirection = CalculateDirectionAndSpread().normalized;
         // Instantiate the bullet
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
         // Pointing the bullet to face the shooting direction.
-        bullet.transform.forward = shootingDirectiion;
+        bullet.transform.forward = shootingDirection;
         // Shoot the bullet
-        bullet.GetComponent<Rigidbody>().AddForce(bulletSpawn.forward.normalized * bulletVelocity, ForceMode.Impulse);
+        bullet.GetComponent<Rigidbody>().AddForce(shootingDirection * bulletVelocity, ForceMode.Impulse);
         // Destroy the bullet after some time
         StartCoroutine(DestroyBulletAfterTime(bullet, bulletPrefabLifeTime));
         // Checking if we are done shooting
@@ -114,7 +114,7 @@ public class Weapon : MonoBehaviour
             // Shooting at the air
             targetPoint = ray.GetPoint(100);
         }
-        Vector3 direction = targetPoint - bulletSpawn.position;
+        Vector3 direction = targetPoint - ray.origin;
         float x = UnityEngine.Random.Range(-spreadIntensity, spreadIntensity);
         float y = UnityEngine.Random.Range(-spreadIntensity, spreadIntensity);
         // Returning the shooting direction and spread.
