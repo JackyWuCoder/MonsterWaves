@@ -7,6 +7,7 @@ TagManager:
   - Target
   - Enemy
   - Wall
+  - Beer
   layers:
   - Default
   - TransparentFX
