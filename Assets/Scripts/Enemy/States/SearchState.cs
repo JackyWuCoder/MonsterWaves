@@ -5,6 +5,7 @@ using UnityEngine;
 public class SearchState : BaseState
 {
     protected float searchTimer;
+    protected float moveTimer;
 
     public override void Enter()
     {
