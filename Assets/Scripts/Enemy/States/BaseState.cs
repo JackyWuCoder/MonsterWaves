@@ -1,7 +1,7 @@
 public abstract class BaseState
 {
     // Contains an instance of enemy class.
-    // Contains an instance of state machine class.
+    private StateMachine stateMachine;
 
     // Initialize game properties, similar to Start() method.
     public abstract void Enter();
@@ -9,4 +9,9 @@ public abstract class BaseState
     public abstract void Perform();
     // Called on the active state before changing into a new state.
     public abstract void Exit();
+
+    public void SetStateMachine(StateMachine stateMachine)
+    {
+        this.stateMachine = stateMachine;
+    }
 }
