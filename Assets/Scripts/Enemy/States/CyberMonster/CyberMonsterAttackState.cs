@@ -6,7 +6,6 @@ public class CyberMonsterAttackState : AttackState
 {
     private CyberMonster cyberEnemy;
     private float shotTimer;
-    [SerializeField] private Animator animator;
 
     public override void Enter()
     {
