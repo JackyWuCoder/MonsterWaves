@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     private NavMeshAgent agent;
     // Only for debugging purposes.
     [SerializeField] private string currentState;
-    private Path path;
+    [SerializeField] private Path path;
 
     public NavMeshAgent Agent { get => agent; }
 

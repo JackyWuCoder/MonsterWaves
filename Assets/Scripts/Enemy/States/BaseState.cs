@@ -10,6 +10,11 @@ public abstract class BaseState
     // Called on the active state before changing into a new state.
     public abstract void Exit();
 
+    public void SetEnemy(Enemy enemy)
+    {
+        this.enemy = enemy;
+    }
+
     public void SetStateMachine(StateMachine stateMachine)
     {
         this.stateMachine = stateMachine;
