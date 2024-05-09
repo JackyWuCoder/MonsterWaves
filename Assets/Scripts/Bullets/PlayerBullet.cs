@@ -14,13 +14,13 @@ public class PlayerBullet : MonoBehaviour
             CreateBulletImpactEffect(collision);
             Destroy(gameObject);
         }
-        if (collision.gameObject.CompareTag("Target"))
+        else if (collision.gameObject.CompareTag("Target"))
         {
             Debug.Log("hit " + collision.gameObject.name + " !");
             CreateBulletImpactEffect(collision);
             Destroy(gameObject);
         }
-        if (collision.gameObject.CompareTag("Wall"))
+        else if (collision.gameObject.CompareTag("Wall"))
         {
             Debug.Log("hit a wall");
             CreateBulletImpactEffect(collision);
