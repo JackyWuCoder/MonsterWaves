@@ -47,13 +47,15 @@ public class Enemy : MonoBehaviour
             {
                 Vector3 playerDirection = player.transform.position - transform.position - (Vector3.up * eyeHeight);
                 float angleToPlayer = Vector3.Angle(playerDirection, transform.forward);
+                Debug.Log(angleToPlayer);
                 if((angleToPlayer >= -fieldOfView) && (angleToPlayer <= fieldOfView))
                 {
+                    Debug.Log("Sees Player!");
                     Ray ray = new Ray(transform.position + (Vector3.up * eyeHeight), playerDirection);
                     RaycastHit hitInfo = new RaycastHit();
                     if (Physics.Raycast(ray, out hitInfo, sightDistance))
                     {
-                        if (hitInfo.transform.gameObject == player)
+                        if (hitInfo.transform.gameObject != player)
                         {
                             return true;
                         }
