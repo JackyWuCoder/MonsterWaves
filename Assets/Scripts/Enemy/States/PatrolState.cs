@@ -6,7 +6,7 @@ public class PatrolState : BaseState
 {
     // Track which waypoint we are currently targeting.
     private int waypointIndex;
-    [SerializeField] private float waitTimer;
+    private float waitTimer;
 
     public override void Enter()
     {
@@ -26,9 +26,10 @@ public class PatrolState : BaseState
     public void PatrolCycle()
     {
         // Implement patrol logic.
-        if (enemy.Agent.remainingDistance < 0.2f)
+        if (enemy.Agent.remainingDistance < 5f)
         {
             waitTimer += Time.deltaTime;
+            Debug.Log(waitTimer);
             if (waitTimer > 3)
             {
                 List<Transform> wayPoints = enemy.GetPath().GetWaypoints();
