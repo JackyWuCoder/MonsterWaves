@@ -12951,6 +12951,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cyber Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 7022837142073018602, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_Speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7120950273580065540, guid: 484d6a384d6b95a449257b9e4fd2003c,
         type: 3}
       propertyPath: player
@@ -13700,7 +13705,7 @@ PrefabInstance:
     - target: {fileID: 1317061364265332940, guid: 8165455fbf2c68941b310a67cd7080c1,
         type: 3}
       propertyPath: m_Speed
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2296039199100383132, guid: 8165455fbf2c68941b310a67cd7080c1,
         type: 3}
@@ -13710,7 +13715,7 @@ PrefabInstance:
     - target: {fileID: 3074210182535843631, guid: 8165455fbf2c68941b310a67cd7080c1,
         type: 3}
       propertyPath: m_Speed
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3495371935037983459, guid: 8165455fbf2c68941b310a67cd7080c1,
         type: 3}
@@ -13730,7 +13735,7 @@ PrefabInstance:
     - target: {fileID: 7775481660800157343, guid: 8165455fbf2c68941b310a67cd7080c1,
         type: 3}
       propertyPath: m_Speed
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class CyberMonster : Enemy
 {
     private CyberMonsterStateMachine stateMachine;
+    private Animator animator;
 
     [Header("Weapon Values")]
     [SerializeField] private Transform gunBarrel;
@@ -21,6 +22,7 @@ public class CyberMonster : Enemy
         base.Start();
         stateMachine = GetComponent<CyberMonsterStateMachine>();
         stateMachine.Initialize();
+        animator = GetComponent<Animator>();
     }
 
     protected override void Update()
@@ -36,6 +38,7 @@ public class CyberMonster : Enemy
 
     public void Shoot()
     {
+        animator.Play("Shoot", 1);
         Debug.Log("CyberMonster is Shooting.");
     }
 }
