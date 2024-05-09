@@ -26,6 +26,7 @@ public class AttackState : BaseState
                 enemy.Agent.SetDestination(enemy.transform.position + (Random.insideUnitSphere * 5));
                 moveTimer = 0;
             }
+            enemy.LastSeenPlayerPos = enemy.Player.transform.position;
         }
         else 
         {

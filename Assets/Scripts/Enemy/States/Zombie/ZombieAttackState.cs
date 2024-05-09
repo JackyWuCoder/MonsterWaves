@@ -20,7 +20,8 @@ public class ZombieAttackState : AttackState
             if (losePlayerTimer > 8)
             {
                 // Change to the search state
-                stateMachine.ChangeState(new ZombiePatrolState());
+                // stateMachine.ChangeState(new ZombiePatrolState());
+                stateMachine.ChangeState(new ZombieSearchState());
             }
         }
     }

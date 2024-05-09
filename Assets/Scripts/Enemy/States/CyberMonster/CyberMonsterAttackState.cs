@@ -31,7 +31,8 @@ public class CyberMonsterAttackState : AttackState
             if (losePlayerTimer > 8)
             {
                 // Change to the search state
-                stateMachine.ChangeState(new CyberMonsterPatrolState());
+                // stateMachine.ChangeState(new CyberMonsterPatrolState());
+                stateMachine.ChangeState(new CyberMonsterSearchState());
             }
         }
     }

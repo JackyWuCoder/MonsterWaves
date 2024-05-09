@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     protected NavMeshAgent agent;
     [SerializeField] protected GameObject player;
     [SerializeField] protected Path path;
+    private Vector3 lastSeenPlayerPos;
     
     [Header("Sight Values")]
     [SerializeField] protected float sightDistance = 20.0f;
@@ -17,6 +18,9 @@ public class Enemy : MonoBehaviour
 
     public NavMeshAgent Agent { get => agent; }
     public GameObject Player { get => player; }
+    public Vector3 LastSeenPlayerPos { 
+        get => lastSeenPlayerPos; set => lastSeenPlayerPos = value;
+    }
 
     // Start is called before the first frame update
     protected virtual void Start()
