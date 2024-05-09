@@ -3719,7 +3719,7 @@ GameObject:
   - component: {fileID: 3323426327234947431}
   - component: {fileID: 7022837142073018602}
   m_Layer: 0
-  m_Name: Cyber Monsters 2
+  m_Name: Cyber Monster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
