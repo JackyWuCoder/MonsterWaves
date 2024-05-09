@@ -1425,7 +1425,7 @@ GameObject:
   - component: {fileID: 1796824901727656922}
   - component: {fileID: 2919040062984978339}
   - component: {fileID: 7324046157681471270}
-  - component: {fileID: 3223499698012961758}
+  - component: {fileID: 8682429300559497395}
   m_Layer: 0
   m_Name: Zombie2
   m_TagString: Untagged
@@ -1494,7 +1494,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3223499698012961758
+--- !u!114 &8682429300559497395
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

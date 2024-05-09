@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class CyberMonsterStateMachine : StateMachine
 {
+    public override void Awake()
+    {
+        ChangeState(new CyberMonsterPatrolState());
+    }
+
+    public override void Update()
+    {
+        if (activeState != null)
+        {
+            activeState.Perform();
+        }
+    }
+
     public override void ChangeState(BaseState newState)
     {
         base.ChangeState(newState);
@@ -15,10 +28,5 @@ public class CyberMonsterStateMachine : StateMachine
             activeState.SetEnemy(GetComponent<CyberMonster>());
             activeState.Enter();
         }
-    }
-
-    public override void Start()
-    {
-        ChangeState(new CyberMonsterPatrolState());
     }
 }

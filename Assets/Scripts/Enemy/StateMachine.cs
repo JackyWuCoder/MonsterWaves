@@ -9,16 +9,10 @@ public abstract class StateMachine : MonoBehaviour
     // Property for the patrol state.
 
     // Start is called before the first frame update
-    public abstract void Start();
+    public abstract void Awake();
 
     // Update is called once per frame
-    protected void Update()
-    {
-        if (activeState != null)
-        {
-            activeState.Perform();
-        }
-    }
+    public abstract void Update();
 
     public void Initialize()
     {

@@ -12,11 +12,6 @@ public class AttackState : BaseState
         
     }
 
-    public override void Exit()
-    {
-       
-    }
-
     public override void Perform()
     {
         // Enemy can see the player.
@@ -42,15 +37,8 @@ public class AttackState : BaseState
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public override void Exit()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

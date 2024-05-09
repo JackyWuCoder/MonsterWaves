@@ -4,6 +4,20 @@ using UnityEngine;
 
 public class ZombieStateMachine : StateMachine
 {
+
+    public override void Awake()
+    {
+        ChangeState(new ZombiePatrolState());
+    }
+
+    public override void Update()
+    {
+        if (activeState != null)
+        {
+            activeState.Perform();
+        }
+    }
+
     public override void ChangeState(BaseState newState)
     {
         base.ChangeState(newState);
@@ -15,10 +29,5 @@ public class ZombieStateMachine : StateMachine
             activeState.SetEnemy(GetComponent<Zombie>());
             activeState.Enter();
         }
-    }
-
-    public override void Start()
-    {
-        ChangeState(new ZombiePatrolState());
     }
 }
