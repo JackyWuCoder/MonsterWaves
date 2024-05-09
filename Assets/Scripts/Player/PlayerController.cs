@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool isGrounded;
+    private bool isMoving;
     private float xRotation = 0f;
+    private Vector3 lastPosition = new Vector3(0f, 0f, 0f);
 
     [Header("Move and Jump")]
     [SerializeField] private float speed = 5.0f;
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Ground check
         isGrounded = controller.isGrounded;
         if (isLerpCrouching)
         {
@@ -55,21 +58,37 @@ public class PlayerController : MonoBehaviour
                 crouchTimer = 0f;
             }
         }
+        if ((lastPosition != gameObject.transform.position) && (isGrounded == true))
+        {
+            isMoving = true;
+            // for later use.
+        }
+        else 
+        {
+            isMoving = false;
+            // for later use.
+        }
+        lastPosition = gameObject.transform.position;
     }
 
     // Receive inputs from PlayerInputManager.cs and apply them to our character controller.
     public void PlayerMove(Vector2 input)
     {
+        // Creating the moving vector
         Vector3 moveDirection = Vector3.zero;
         moveDirection.x = input.x;
         moveDirection.z = input.y;
+
         // Player movement in the x-z plane.
         controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
+        
+        // Falling down.
         playerVelocity.y += gravity * Time.deltaTime;
         if (isGrounded && (playerVelocity.y < 0f))
         {
             playerVelocity.y = -2.0f;
         }
+
         // Player movement along the y-axis.
         controller.Move(playerVelocity * Time.deltaTime);
     }
@@ -90,8 +109,10 @@ public class PlayerController : MonoBehaviour
         // Camera rotation arcund the x-axis (look up and down).
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, topClamp, bottomClamp);
+
         // Apply this to our camera's parent (eyes) transform.
         cam.transform.parent.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        
         // Rotate player to look left and right.
         transform.Rotate(Vector3.up * mouseX);
     }
