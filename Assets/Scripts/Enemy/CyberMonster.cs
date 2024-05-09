@@ -8,4 +8,14 @@ public class CyberMonster : Enemy
     [SerializeField] private Transform gunBarrel;
     [Range(0.1f, 10.0f)]
     [SerializeField] private float fireRate;
+
+    public float GetFireRate()
+    {
+        return fireRate;
+    }
+
+    public void Shoot()
+    {
+        Debug.Log("CyberMonster is Shooting.");
+    }
 }

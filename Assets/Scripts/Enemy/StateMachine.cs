@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour
 {
-    private BaseState activeState;
+    protected BaseState activeState;
 
     // Property for the patrol state.
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         ChangeState(new PatrolState());
     }
 
     // Update is called once per frame
-    void Update()
+    protected void Update()
     {
         if (activeState != null)
         {
@@ -33,7 +33,7 @@ public class StateMachine : MonoBehaviour
         return activeState;
     }
 
-    public void ChangeState(BaseState newState)
+    public virtual void ChangeState(BaseState newState)
     {
         // Check if there is an active state.
         if (activeState != null)

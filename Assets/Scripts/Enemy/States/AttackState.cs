@@ -19,8 +19,10 @@ public class AttackState : BaseState
 
     public override void Perform()
     {
+        // Enemy can see the player.
         if (enemy.CanSeePlayer())
         {
+            // Lock the lose player timer and increment the move timer.
             losePlayerTimer = 0;
             moveTimer += Time.deltaTime;
             if (moveTimer > Random.Range(3, 7))

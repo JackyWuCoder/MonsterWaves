@@ -9,15 +9,17 @@ public class Enemy : MonoBehaviour
     protected NavMeshAgent agent;
     protected GameObject player;
 
-    // Only for debugging purposes.
-    [SerializeField] protected string currentState;
     [SerializeField] protected Path path;
-
+    
     [Header("Sight Values")]
     [SerializeField] protected float sightDistance = 20.0f;
     [SerializeField] protected float fieldOfView = 85.0f;
     // Allows for the enemy to see at eye level.
     [SerializeField] protected float eyeHeight;
+
+    // Only for debugging purposes.
+    [Header("Debugging")]
+    [SerializeField] protected string currentState;
 
     public NavMeshAgent Agent { get => agent; }
 
