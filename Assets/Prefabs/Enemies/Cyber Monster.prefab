@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 906345640235552671}
   m_Layer: 0
-  m_Name: Waypoint
+  m_Name: Waypoint 1
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -145,7 +145,7 @@ Transform:
   m_GameObject: {fileID: 59799848580592100}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.89, y: 0, z: -9.78}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1006,6 +1006,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4423034355683327326}
+  - component: {fileID: 2991646148284781377}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -1029,6 +1030,28 @@ Transform:
   - {fileID: 8522640553878889334}
   m_Father: {fileID: 237620021025291352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &2991646148284781377
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919644644822040565}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &987582978891891317
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,8 +1326,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257407461991992053}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 2}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1407,7 +1430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2816636579636149609}
   m_Layer: 0
-  m_Name: Waypoint (1)
+  m_Name: Waypoint 3
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -1422,7 +1445,7 @@ Transform:
   m_GameObject: {fileID: 1399869785033890424}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.76, y: 0, z: 3.74}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2637,6 +2660,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6990481042466603811}
+  - component: {fileID: 1651622699925371274}
   m_Layer: 0
   m_Name: Armour
   m_TagString: Untagged
@@ -2694,6 +2718,28 @@ Transform:
   - {fileID: 4786975073171653969}
   m_Father: {fileID: 237620021025291352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1651622699925371274
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902742048538672302}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &3009875057747418010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3643,6 +3689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1114855088388886340}
+  - component: {fileID: 2819222685145636718}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -3670,6 +3717,28 @@ Transform:
   - {fileID: 6476850417318967786}
   m_Father: {fileID: 237620021025291352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &2819222685145636718
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4184060065266708264}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4202532153791036141
 GameObject:
   m_ObjectHideFlags: 0
@@ -3837,7 +3906,6 @@ GameObject:
   - component: {fileID: 7022837142073018602}
   - component: {fileID: 7120950273580065540}
   - component: {fileID: 1948767489512284987}
-  - component: {fileID: 8229611712389358174}
   m_Layer: 0
   m_Name: Cyber Monster
   m_TagString: Enemy
@@ -3943,28 +4011,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c6b2e3262354a4785cff92113c0b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &8229611712389358174
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4349080128417467894}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!1 &4350551226227607256
 GameObject:
   m_ObjectHideFlags: 0
@@ -4103,7 +4149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4870192367665493257}
   m_Layer: 0
-  m_Name: Waypoint (3)
+  m_Name: Waypoint 4
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -4118,7 +4164,7 @@ Transform:
   m_GameObject: {fileID: 4589405458182317798}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.42, y: 1.94, z: -11.25}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6747,7 +6793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6929463206840616895}
   m_Layer: 0
-  m_Name: Waypoint (2)
+  m_Name: Waypoint 2
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -6762,7 +6808,7 @@ Transform:
   m_GameObject: {fileID: 7682230980770169721}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.16, y: 0, z: 2.59}
+  m_LocalPosition: {x: -10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
