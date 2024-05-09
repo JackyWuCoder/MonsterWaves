@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    protected StateMachine stateMachine;
     protected NavMeshAgent agent;
     protected GameObject player;
 
@@ -17,26 +16,19 @@ public class Enemy : MonoBehaviour
     // Allows for the enemy to see at eye level.
     [SerializeField] protected float eyeHeight;
 
-    // Only for debugging purposes.
-    [Header("Debugging")]
-    [SerializeField] protected string currentState;
-
     public NavMeshAgent Agent { get => agent; }
 
     // Start is called before the first frame update
-    protected void Start()
+    protected virtual void Start()
     {
-        stateMachine = GetComponent<StateMachine>();
         agent = GetComponent<NavMeshAgent>();
-        stateMachine.Initialize();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
-    protected void Update()
+    protected virtual void Update()
     {
         CanSeePlayer();
-        currentState = stateMachine.GetActiveState().ToString();
     }
 
     public Path GetPath()
@@ -55,7 +47,6 @@ public class Enemy : MonoBehaviour
                 float angleToPlayer = Vector3.Angle(playerDirection, transform.forward);
                 if((angleToPlayer >= -fieldOfView) && (angleToPlayer <= fieldOfView))
                 {
-                    Debug.Log("Sees Player!");
                     Ray ray = new Ray(transform.position + (Vector3.up * eyeHeight), playerDirection);
                     RaycastHit hitInfo = new RaycastHit();
                     if (Physics.Raycast(ray, out hitInfo, sightDistance))

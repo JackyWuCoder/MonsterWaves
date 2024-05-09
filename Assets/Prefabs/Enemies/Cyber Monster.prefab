@@ -3836,6 +3836,7 @@ GameObject:
   - component: {fileID: 1463109932381850361}
   - component: {fileID: 7022837142073018602}
   - component: {fileID: 7120950273580065540}
+  - component: {fileID: 1948767489512284987}
   m_Layer: 0
   m_Name: Cyber Monster
   m_TagString: Untagged
@@ -3918,13 +3919,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5964d6ecba517c4299aba05d180a9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 
   path: {fileID: 8847697294342228609}
   sightDistance: 20
   fieldOfView: 85
   eyeHeight: 0
+  currentState: 
   gunBarrel: {fileID: 585259127774802466}
-  fireRate: 0
+  fireRate: 1.3
+--- !u!114 &1948767489512284987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4349080128417467894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5c6b2e3262354a4785cff92113c0b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4350551226227607256
 GameObject:
   m_ObjectHideFlags: 0

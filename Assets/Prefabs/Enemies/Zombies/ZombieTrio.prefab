@@ -1337,7 +1337,6 @@ GameObject:
   - component: {fileID: 4289516185094899453}
   - component: {fileID: 7775481660800157343}
   - component: {fileID: 5577890161043274738}
-  - component: {fileID: 5086837765012299660}
   m_Layer: 0
   m_Name: Zombie1
   m_TagString: Untagged
@@ -1430,20 +1429,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3da8c5bfec40e4ba55999f1d01d1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 
   path: {fileID: 3178793269038761139}
---- !u!114 &5086837765012299660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1609114048022825258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe79c44608d88204c9a45eaf977cf6b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  sightDistance: 20
+  fieldOfView: 85
+  eyeHeight: 0
 --- !u!1 &1722095885809654238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,7 +2551,6 @@ GameObject:
   - component: {fileID: 7996076203549875123}
   - component: {fileID: 4276996861000390926}
   - component: {fileID: 6765255597148510931}
-  - component: {fileID: 5078753499907428686}
   - component: {fileID: 1317061364265332940}
   m_Layer: 0
   m_Name: Zombie2
@@ -2622,20 +2610,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3da8c5bfec40e4ba55999f1d01d1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 
   path: {fileID: 3178793269038761139}
---- !u!114 &5078753499907428686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3208630114582313065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe79c44608d88204c9a45eaf977cf6b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  sightDistance: 20
+  fieldOfView: 85
+  eyeHeight: 0
 --- !u!195 &1317061364265332940
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -7383,7 +7361,6 @@ GameObject:
   - component: {fileID: 6949832113665418365}
   - component: {fileID: 4763890275722376238}
   - component: {fileID: 5134658115635363331}
-  - component: {fileID: 2763312143056142049}
   - component: {fileID: 3074210182535843631}
   m_Layer: 0
   m_Name: Zombie3
@@ -7442,20 +7419,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3da8c5bfec40e4ba55999f1d01d1e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 
   path: {fileID: 3178793269038761139}
---- !u!114 &2763312143056142049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9222907902027135291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe79c44608d88204c9a45eaf977cf6b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  sightDistance: 20
+  fieldOfView: 85
+  eyeHeight: 0
 --- !u!195 &3074210182535843631
 NavMeshAgent:
   m_ObjectHideFlags: 0

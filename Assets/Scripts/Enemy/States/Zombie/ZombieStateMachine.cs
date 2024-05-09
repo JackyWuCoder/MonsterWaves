@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CyberMonsterStateMachine : StateMachine
+public class ZombieStateMachine : StateMachine
 {
     public override void ChangeState(BaseState newState)
     {
@@ -12,8 +12,13 @@ public class CyberMonsterStateMachine : StateMachine
         {
             // Set up new state.
             activeState.SetStateMachine(this);
-            activeState.SetEnemy(GetComponent<CyberMonster>());
+            activeState.SetEnemy(GetComponent<Zombie>());
             activeState.Enter();
         }
+    }
+
+    public override void Start()
+    {
+        ChangeState(new ZombiePatrolState());
     }
 }

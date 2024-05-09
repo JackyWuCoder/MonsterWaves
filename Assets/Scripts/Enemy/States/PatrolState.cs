@@ -5,8 +5,8 @@ using UnityEngine;
 public class PatrolState : BaseState
 {
     // Track which waypoint we are currently targeting.
-    private int waypointIndex;
-    private float waitTimer;
+    protected int waypointIndex;
+    protected float waitTimer;
 
     public override void Enter()
     {
@@ -16,10 +16,6 @@ public class PatrolState : BaseState
     public override void Perform()
     {
         PatrolCycle();
-        if (enemy.CanSeePlayer())
-        {
-            stateMachine.ChangeState(new AttackState());
-        }
     }
 
     public override void Exit()
@@ -33,7 +29,6 @@ public class PatrolState : BaseState
         if (enemy.Agent.remainingDistance < 5f)
         {
             waitTimer += Time.deltaTime;
-            Debug.Log(waitTimer);
             if (waitTimer > 3)
             {
                 List<Transform> wayPoints = enemy.GetPath().GetWaypoints();

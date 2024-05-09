@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateMachine : MonoBehaviour
+public abstract class StateMachine : MonoBehaviour
 {
     protected BaseState activeState;
 
     // Property for the patrol state.
 
     // Start is called before the first frame update
-    protected void Start()
-    {
-        ChangeState(new PatrolState());
-    }
+    public abstract void Start();
 
     // Update is called once per frame
     protected void Update()
@@ -43,14 +40,5 @@ public class StateMachine : MonoBehaviour
         }
         // Change to a new state.
         activeState = newState;
-
-        // Check to make sure the new state wasn't null.
-        if (activeState != null)
-        {
-            // Set up new state.
-            activeState.SetStateMachine(this);
-            activeState.SetEnemy(GetComponent<Enemy>());
-            activeState.Enter();
-        }
     }
 }
