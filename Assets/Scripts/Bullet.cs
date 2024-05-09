@@ -35,10 +35,14 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    void CreateBulletImpact(Collision objectWeHit)
+    private void CreateBulletImpactEffect(Collision objectWeHit)
     {
         ContactPoint contact = objectWeHit.contacts[0];
-        GameObject hole = Instantiate();
-        hole.transform.SetParent(objectWeHit.gameObject.transform)
+        GameObject hole = Instantiate(
+            GlobalReferences.Instance.bulletImpactEffectPrefab,
+            contact.point,
+            Quaternion.LookRotation(contact.normal)
+            );
+        hole.transform.SetParent(objectWeHit.gameObject.transform);
     }
 }
