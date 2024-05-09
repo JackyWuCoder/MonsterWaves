@@ -1,6 +1,6 @@
 public abstract class BaseState
 {
-    private Enemy enemy; 
+    protected Enemy enemy; 
     private StateMachine stateMachine;
 
     // Initialize game properties, similar to Start() method.

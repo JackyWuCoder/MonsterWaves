@@ -26,4 +26,9 @@ public class Enemy : MonoBehaviour
     {
         
     }
+
+    public Path GetPath()
+    {
+        return path;
+    }
 }

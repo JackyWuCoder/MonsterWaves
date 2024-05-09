@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Path : MonoBehaviour
 {
-    private List<Transform> waypoints = new List<Transform>();
+    [SerializeField] private List<Transform> waypoints = new List<Transform>();
 
     // Start is called before the first frame update
     void Start()
@@ -16,5 +16,10 @@ public class Path : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public List<Transform> GetWaypoints()
+    {
+        return waypoints;
     }
 }
