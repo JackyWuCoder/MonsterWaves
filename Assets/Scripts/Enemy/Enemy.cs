@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     private GameObject player;
     [SerializeField] private float sightDistance = 20.0f;
     [SerializeField] private float fieldOfView = 85.0f;
+    // Allows for the enemy to see at eye level.
+    [SerializeField] private float eyeHeight;
 
     public NavMeshAgent Agent { get => agent; }
 
@@ -43,15 +45,24 @@ public class Enemy : MonoBehaviour
             // Is the player close enough to be seen?
             if (Vector3.Distance(transform.position, player.transform.position) < sightDistance)
             {
-                Vector3 playerDirection = player.transform.position - transform.position;
+                Vector3 playerDirection = player.transform.position - transform.position - (Vector3.up * eyeHeight);
                 float angleToPlayer = Vector3.Angle(playerDirection, transform.forward);
-                if(angleToPlayer >= -fieldOfView && angleToPlayer <= fieldOfView)
+                if((angleToPlayer >= -fieldOfView) && (angleToPlayer <= fieldOfView))
                 {
-                    Ray ray = new Ray(transform.position, playerDirection);
+                    Ray ray = new Ray(transform.position + (Vector3.up * eyeHeight), playerDirection);
+                    RaycastHit hitInfo = new RaycastHit();
+                    if (Physics.Raycast(ray, out hitInfo, sightDistance))
+                    {
+                        if (hitInfo.transform.gameObject == player)
+                        {
+                            return true;
+                        }
+
+                    }
                     Debug.DrawRay(ray.origin, ray.direction * sightDistance);
                 }
             }
         }
-        return true;
+        return false;
     }
 }
