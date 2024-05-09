@@ -7,7 +7,7 @@ public class CyberMonster : Enemy
 {
     private CyberMonsterStateMachine stateMachine;
     private Animator animator;
-    [SerializeField] private GameObject bullet;
+    [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletSpeed = 40.0f;
 
     [Header("Weapon Values")]
@@ -43,11 +43,11 @@ public class CyberMonster : Enemy
         // Store reference to the gun barrel.
         Transform gunBarrel = this.gunBarrel;
         // Instantiate a new bullet.
-        Instantiate(bullet, gunBarrel.position, transform.rotation);
+        GameObject bullet = Instantiate(bulletPrefab, gunBarrel.position, transform.rotation);
         // Calculate the direction to the player.
         Vector3 shootDirection = (player.transform.position - gunBarrel.transform.position).normalized;
         // Add force to the rigidbody of the bullet.
-        bullet.GetComponent<Rigidbody>().velocity = shootDirection * bulletSpeed;
+        bullet.GetComponent<Rigidbody>().velocity = Quaternion.AngleAxis(Random.Range(-3.0f, 3.0f), Vector3.up) * shootDirection * bulletSpeed;
         animator.Play("Shoot", 1);
         Debug.Log("CyberMonster is Shooting.");
     }
