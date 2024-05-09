@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AttackState : BaseState
 {
-    private float moveTimer;
-    private float losePlayerTimer;
+    protected float moveTimer;
+    protected float losePlayerTimer;
 
     public override void Enter()
     {

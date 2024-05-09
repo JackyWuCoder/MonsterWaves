@@ -6060,6 +6060,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 502088768}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &502506557 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 585259127774802466, guid: 484d6a384d6b95a449257b9e4fd2003c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1003001777}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &505636078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12985,8 +12991,18 @@ PrefabInstance:
     - target: {fileID: 4349080128417467894, guid: 484d6a384d6b95a449257b9e4fd2003c,
         type: 3}
       propertyPath: m_Name
-      value: Cyber Monsters 2
+      value: Cyber Monster
       objectReference: {fileID: 0}
+    - target: {fileID: 7120950273580065540, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: path
+      value: 
+      objectReference: {fileID: 1570199166}
+    - target: {fileID: 7120950273580065540, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: gunBarrel
+      value: 
+      objectReference: {fileID: 502506557}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20235,6 +20251,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1569164557}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1570199166 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8847697294342228609, guid: 484d6a384d6b95a449257b9e4fd2003c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1003001777}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f1025c2d0f17a543a347360423efdd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1580578181
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -19,9 +19,6 @@ public class Enemy : MonoBehaviour
     // Allows for the enemy to see at eye level.
     [SerializeField] protected float eyeHeight;
 
-    [Header("Weapon Values")]
-    [SerializeField] protected Transform BulletSpawnPoint;
-
     public NavMeshAgent Agent { get => agent; }
 
     // Start is called before the first frame update
