@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [Header("Move and Jump")]
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private float gravity = -9.8f;
-    [SerializeField] private float jumpHeight = 3.0f;
+    [SerializeField] private float jumpHeight = 0.8f; // 3.0f
 
     [Header("Look")]
     [SerializeField] private Camera cam;
