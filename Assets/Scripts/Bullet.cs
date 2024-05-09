@@ -10,19 +10,35 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            Debug.Log("hit " + collision.gameObject.name + " !");
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(bulletDamage);
+            CreateBulletImpactEffect(collision);
+            Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("hit " + collision.gameObject.name + " !");
+            CreateBulletImpactEffect(collision);
+            Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Target"))
-        { 
+        {
+            Debug.Log("hit " + collision.gameObject.name + " !");
+            CreateBulletImpactEffect(collision);
+            Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Wall"))
         {
             Debug.Log("hit a wall");
+            CreateBulletImpactEffect(collision);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+    }
+
+    void CreateBulletImpact(Collision objectWeHit)
+    {
+        ContactPoint contact = objectWeHit.contacts[0];
+        GameObject hole = Instantiate();
+        hole.transform.SetParent(objectWeHit.gameObject.transform)
     }
 }
