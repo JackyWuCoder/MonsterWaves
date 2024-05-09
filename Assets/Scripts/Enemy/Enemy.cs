@@ -10,6 +10,9 @@ public class Enemy : MonoBehaviour
     // Only for debugging purposes.
     [SerializeField] private string currentState;
     [SerializeField] private Path path;
+    private GameObject player;
+    [SerializeField] private float sightDistance = 20.0f;
+    [SerializeField] private float fieldOfView = 85.0f;
 
     public NavMeshAgent Agent { get => agent; }
 
@@ -19,16 +22,36 @@ public class Enemy : MonoBehaviour
         stateMachine = GetComponent<StateMachine>();
         agent = GetComponent<NavMeshAgent>();
         stateMachine.Initialize();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        CanSeePlayer();
     }
 
     public Path GetPath()
     {
         return path;
+    }
+
+    public bool CanSeePlayer()
+    {
+        if (player != null)
+        {
+            // Is the player close enough to be seen?
+            if (Vector3.Distance(transform.position, player.transform.position) < sightDistance)
+            {
+                Vector3 playerDirection = player.transform.position - transform.position;
+                float angleToPlayer = Vector3.Angle(playerDirection, transform.forward);
+                if(angleToPlayer >= -fieldOfView && angleToPlayer <= fieldOfView)
+                {
+                    Ray ray = new Ray(transform.position, playerDirection);
+                    Debug.DrawRay(ray.origin, ray.direction * sightDistance);
+                }
+            }
+        }
+        return true;
     }
 }
