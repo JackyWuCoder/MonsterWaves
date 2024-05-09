@@ -9,7 +9,7 @@ public class ZombiePatrolState : PatrolState
         base.Perform();
         if (enemy.CanSeePlayer())
         {
-            stateMachine.ChangeState(new ZombiePatrolState());
+            stateMachine.ChangeState(new ZombieAttackState());
         }
     }
 }
