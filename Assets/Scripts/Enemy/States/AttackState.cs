@@ -20,6 +20,7 @@ public class AttackState : BaseState
             // Lock the lose player timer and increment the move timer.
             losePlayerTimer = 0;
             moveTimer += Time.deltaTime;
+            enemy.transform.LookAt(enemy.Player.transform);
             if (moveTimer > Random.Range(3, 7))
             {
                 enemy.Agent.SetDestination(enemy.transform.position + (Random.insideUnitSphere * 5));
@@ -29,11 +30,6 @@ public class AttackState : BaseState
         else 
         {
             losePlayerTimer += Time.deltaTime;
-            if (losePlayerTimer > 8)
-            {
-                // Change to the search state
-                stateMachine.ChangeState(new PatrolState());
-            }
         }
     }
 

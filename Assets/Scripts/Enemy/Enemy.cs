@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
 {
     protected NavMeshAgent agent;
     [SerializeField] protected GameObject player;
-
     [SerializeField] protected Path path;
     
     [Header("Sight Values")]
@@ -17,6 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float eyeHeight;
 
     public NavMeshAgent Agent { get => agent; }
+    public GameObject Player { get => player; }
 
     // Start is called before the first frame update
     protected virtual void Start()
