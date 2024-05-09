@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Wall
   - Beer
+  - Bullet
   layers:
   - Default
   - TransparentFX

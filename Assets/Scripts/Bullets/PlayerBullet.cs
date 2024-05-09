@@ -11,7 +11,6 @@ public class PlayerBullet : MonoBehaviour
         GameObject objectWeHit = collision.gameObject;
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            CreateBulletImpactEffect(collision);
             Destroy(gameObject);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Environment"))
@@ -30,8 +29,6 @@ public class PlayerBullet : MonoBehaviour
             objectWeHit.gameObject.GetComponent<BeerBottle>().Shatter();
             // We will not destroy the bullet on impact, it will get destroyed according to its lifetime
         }
-        CreateBulletImpactEffect(collision);
-        Destroy(gameObject);
     }
 
     private void CreateBulletImpactEffect(Collision objectWeHit)
