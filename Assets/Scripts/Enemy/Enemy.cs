@@ -7,14 +7,20 @@ public class Enemy : MonoBehaviour
 {
     private StateMachine stateMachine;
     private NavMeshAgent agent;
+    private GameObject player;
+
     // Only for debugging purposes.
     [SerializeField] private string currentState;
     [SerializeField] private Path path;
-    private GameObject player;
+
+    [Header("Sight Values")]
     [SerializeField] private float sightDistance = 20.0f;
     [SerializeField] private float fieldOfView = 85.0f;
     // Allows for the enemy to see at eye level.
     [SerializeField] private float eyeHeight;
+
+    [Header("Weapon Values")]
+    [SerializeField] private Transform BulletSpawnPoint;
 
     public NavMeshAgent Agent { get => agent; }
 
