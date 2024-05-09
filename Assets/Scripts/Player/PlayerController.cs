@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     [Header("Look")]
     [SerializeField] private Camera cam;
     [SerializeField] private float mouseSensitivity = 30.0f;
+    [SerializeField] private float topClamp = 90.0f;
+    [SerializeField] private float bottomClamp = -90.0f;
 
     [Header("Crouch")]
     [SerializeField] private bool isCrouching = false;
@@ -87,7 +89,7 @@ public class PlayerController : MonoBehaviour
 
         // Camera rotation arcund the x-axis (look up and down).
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -80.0f, 80.0f);
+        xRotation = Mathf.Clamp(xRotation, bottomClamp, topClamp);
         // Apply this to our camera's parent (eyes) transform.
         cam.transform.parent.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         // Rotate player to look left and right.
