@@ -1,23 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [Header("Health Bar")]
     private float health;
     private float lerpTimer;
+    [Header("Health Bar")]
     [SerializeField] private float maxHealth = 100.0f;
     [SerializeField] private float chipSpeed = 2.0f;
     [SerializeField] private Image frontHealthBar;
     [SerializeField] private Image backHealthBar;
+    [SerializeField] TextMeshProUGUI healthText;
 
     [Header("Damage Overlay")]
     [SerializeField] private Image overlay; // Our damage overlay gameobject.
     [SerializeField] private float duration; // How long the image stays fully opague.
     [SerializeField] private float fadeSpeed; // How quickly the image will fade.
-    [SerializeField] private float durationTimer; // Timer to check against the duration.
+    private float durationTimer; // Timer to check against the duration.
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,8 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthUI();
         if (overlay.color.a > 0)
         {
+            if (health < 30)
+                return;
             durationTimer += Time.deltaTime;
             if (durationTimer > duration)
             {
@@ -68,6 +72,7 @@ public class PlayerHealth : MonoBehaviour
             percentComplete *= percentComplete;
             frontHealthBar.fillAmount = Mathf.Lerp(fillF, backHealthBar.fillAmount, percentComplete);
         }
+        healthText.text = health + "/" + maxHealth;
     }
 
     public void TakeDamage(float damage)
