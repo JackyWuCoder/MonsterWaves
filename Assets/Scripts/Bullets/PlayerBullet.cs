@@ -14,17 +14,17 @@ public class PlayerBullet : MonoBehaviour
             collision.gameObject.GetComponent<Enemy>().TakeDamage(bulletDamage);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Environment"))
+        if (collision.gameObject.CompareTag("Enviroment"))
         {
             CreateBulletImpactEffect(collision);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Target"))
+        if (collision.gameObject.CompareTag("Target"))
         {
             CreateBulletImpactEffect(collision);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.CompareTag("Beer"))
+        if (collision.gameObject.CompareTag("Beer"))
         {
             Debug.Log("hit a beer bottle");
             objectWeHit.gameObject.GetComponent<BeerBottle>().Shatter();
