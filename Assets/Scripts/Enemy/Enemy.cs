@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem.XR.Haptics;
 using UnityEngine.Rendering.Universal.Internal;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
     private const float MAXHEALTH = 100;
-    protected float health = 100;
+    protected float health;
     [SerializeField] protected Slider healthBar;
 
     protected NavMeshAgent agent;
@@ -29,17 +30,29 @@ public class Enemy : MonoBehaviour
         get => lastSeenPlayerPos; set => lastSeenPlayerPos = value;
     }
 
+    protected enum EnemyState
+    { 
+        Idle,
+        Patrol,
+        Attack,
+        Seek,
+        Dead
+    }
+
+    protected EnemyState currentState;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
+        health = MAXHEALTH;
+        currentState = EnemyState.Idle;
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
-        Mathf.Clamp(health, 0, MAXHEALTH);
         healthBar.value = health;
         CanSeePlayer();
     }
@@ -85,6 +98,7 @@ public class Enemy : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         health -= damage;
+        health = Mathf.Clamp(health, 0, MAXHEALTH);
     }
 
 }
