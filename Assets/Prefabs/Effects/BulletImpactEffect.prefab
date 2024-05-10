@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1631735128000710676}
   - component: {fileID: 2118981256130482137}
   m_Layer: 0
-  m_Name: BulletImpactStoneEffect
+  m_Name: BulletImpactEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 540747228436568060}
   - component: {fileID: 6342297923630553003}
   m_Layer: 0
-  m_Name: ImpactDebris
+  m_Name: StoneImpactDebris
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
