@@ -9,7 +9,6 @@ TagManager:
   - Wall
   - Beer
   - Bullet
-  - Environment
   layers:
   - Default
   - TransparentFX

@@ -14,7 +14,7 @@ public class PlayerBullet : MonoBehaviour
             collision.gameObject.GetComponent<Enemy>().TakeDamage(bulletDamage);
             Destroy(gameObject);
         }
-        if (collision.gameObject.CompareTag("Enviroment"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Environment"))
         {
             CreateBulletImpactEffect(collision);
             Destroy(gameObject);
