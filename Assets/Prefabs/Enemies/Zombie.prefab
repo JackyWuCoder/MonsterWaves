@@ -379,7 +379,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8818528767179889757
 CanvasRenderer:
@@ -1439,7 +1439,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2161,8 +2161,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &6012516213471519426
 GameObject:
@@ -2410,6 +2410,7 @@ GameObject:
   - component: {fileID: 6950281962625920820}
   - component: {fileID: 2282471304795956646}
   - component: {fileID: 5093739508302755893}
+  - component: {fileID: 8313756852999552265}
   m_Layer: 5
   m_Name: ZombieCanvas
   m_TagString: Untagged
@@ -2500,6 +2501,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8313756852999552265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6499677461225878511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccaf45dc887fbd040b14e444b36809ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
 --- !u!1 &6530366126410862713
 GameObject:
   m_ObjectHideFlags: 0
@@ -3569,7 +3583,6 @@ MonoBehaviour:
   sightDistance: 20
   fieldOfView: 85
   eyeHeight: 0
-  currentState: 
 --- !u!114 &9094506859475382806
 MonoBehaviour:
   m_ObjectHideFlags: 0
