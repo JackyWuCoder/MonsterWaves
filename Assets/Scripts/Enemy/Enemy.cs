@@ -53,6 +53,13 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+        // Check if enemy is dead.
+        if (health == 0)
+        {
+            currentState = EnemyState.Dead;
+            // Perform any cleanup or death animations here.
+            return; // Exit Update function if enemy is dead.
+        }
         healthBar.value = health;
         CanSeePlayer();
     }
