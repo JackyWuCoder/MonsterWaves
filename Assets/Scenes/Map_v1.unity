@@ -4555,7 +4555,7 @@ PrefabInstance:
     - target: {fileID: 8133809573564475030, guid: 8f059af48abed7a42a9801fd2efac83e,
         type: 3}
       propertyPath: shootingDelay
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8133809573564475030, guid: 8f059af48abed7a42a9801fd2efac83e,
         type: 3}

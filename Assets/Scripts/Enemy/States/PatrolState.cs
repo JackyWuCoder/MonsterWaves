@@ -15,6 +15,10 @@ public class PatrolState : BaseState
 
     public override void Perform()
     {
+        if (enemy.GetHealth() <= 0) {
+            stateMachine.ChangeState(new DeadState());
+            return;
+        }
         PatrolCycle();
     }
 
