@@ -8,10 +8,6 @@ public class Zombie : Enemy
     private ZombieStateMachine stateMachine;
     private Animator animator;
 
-    // Only for debugging purposes.
-    [Header("Debugging")]
-    [SerializeField] protected string currentState;
-
     protected override void Start()
     {
         base.Start();
@@ -23,7 +19,6 @@ public class Zombie : Enemy
     protected override void Update()
     {
         base.Update();
-        currentState = stateMachine.GetActiveState().ToString();
         Debug.Log(health);
         if (health == 0)
         {

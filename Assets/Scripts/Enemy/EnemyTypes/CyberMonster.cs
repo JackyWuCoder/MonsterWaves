@@ -15,10 +15,6 @@ public class CyberMonster : Enemy
     [Range(0.1f, 10.0f)]
     [SerializeField] private float fireRate;
 
-    // Only for debugging purposes.
-    [Header("Debugging")]
-    [SerializeField] protected string currentState;
-
     protected override void Start()
     {
         base.Start();
@@ -34,7 +30,6 @@ public class CyberMonster : Enemy
         {
             animator.Play("Death");
         }
-        currentState = stateMachine.GetActiveState().ToString();
     }
 
     public float GetFireRate()

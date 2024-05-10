@@ -14,12 +14,14 @@ public class ZombieHead : MonoBehaviour
             return;
         gameObject.GetComponent<Enemy>().TakeDamage(30);
         if (gameObject.GetComponent<Enemy>().GetHealth() == 0)
-        GameObject.Instantiate(headReplacement, transform.position, transform.rotation);
-        foreach (Rigidbody part in allParts)
         {
-            part.isKinematic = false;
-            part.AddExplosionForce(100.0f, transform.position, 5.0f);
+            GameObject.Instantiate(headReplacement, transform.position, transform.rotation);
+            foreach (Rigidbody part in allParts)
+            {
+                part.isKinematic = false;
+                part.AddExplosionForce(100.0f, transform.position, 5.0f);
+            }
+            Destroy(headToDestroy);
         }
-        Destroy(headToDestroy);
     }
 }
