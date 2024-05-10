@@ -19,8 +19,8 @@ public class ZombieHead : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Bullet"))
             return;
-        rootParent.GetComponent<Enemy>().TakeDamage(30);
-        if (rootParent.GetComponent<Enemy>().GetHealth() == 0)
+        GameObject zombie = rootParent.transform.Find("Zombie").gameObject;
+        if (zombie.GetComponent<Enemy>().GetHealth() == 0)
         {
             GameObject.Instantiate(headReplacement, transform.position, transform.rotation);
             foreach (Rigidbody part in allParts)

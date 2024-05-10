@@ -19,7 +19,6 @@ public class Zombie : Enemy
     protected override void Update()
     {
         base.Update();
-        Debug.Log(health);
         if (health == 0)
         {
             animator.Play("Z_FallingBack");
