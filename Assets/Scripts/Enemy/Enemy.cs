@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering.Universal.Internal;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    private const float MAXHEALTH = 100;
+    protected float health = 100;
+    [SerializeField] protected Slider healthBar;
+
     protected NavMeshAgent agent;
     [SerializeField] protected GameObject player;
     [SerializeField] protected Path path;
@@ -32,6 +39,8 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
+        Mathf.Clamp(health, 0, MAXHEALTH);
+        healthBar.value = health;
         CanSeePlayer();
     }
 
@@ -66,5 +75,15 @@ public class Enemy : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public float GetHealth()
+    {
+        return health;
+    }
+
+    public virtual void TakeDamage(float damage)
+    {
+        health -= damage;
     }
 }

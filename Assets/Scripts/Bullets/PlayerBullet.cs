@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
-    [SerializeField] private float bulletDamage = 10;
+    [SerializeField] private float bulletDamage = 10.0f;
 
     private void OnCollisionEnter(Collision collision)
     {
         GameObject objectWeHit = collision.gameObject;
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(bulletDamage);
             Destroy(gameObject);
         }
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Environment"))
