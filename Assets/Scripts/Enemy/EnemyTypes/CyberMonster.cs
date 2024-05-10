@@ -29,11 +29,11 @@ public class CyberMonster : Enemy
 
     protected override void Update()
     {
+        base.Update();
         if (health == 0)
         {
             animator.Play("Death");
         }
-        base.Update();
         currentState = stateMachine.GetActiveState().ToString();
     }
 

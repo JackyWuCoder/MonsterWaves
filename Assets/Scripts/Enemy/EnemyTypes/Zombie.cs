@@ -8,7 +8,6 @@ public class Zombie : Enemy
     private ZombieStateMachine stateMachine;
     private Animator animator;
 
-
     // Only for debugging purposes.
     [Header("Debugging")]
     [SerializeField] protected string currentState;
@@ -25,6 +24,7 @@ public class Zombie : Enemy
     {
         base.Update();
         currentState = stateMachine.GetActiveState().ToString();
+        Debug.Log(health);
         if (health == 0)
         {
             animator.Play("Z_FallingBack");

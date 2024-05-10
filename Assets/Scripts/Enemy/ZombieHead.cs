@@ -7,12 +7,6 @@ public class ZombieHead : MonoBehaviour
     [SerializeField] private List<Rigidbody> allParts = new List<Rigidbody>();
     [SerializeField] private GameObject headReplacement;
     [SerializeField] private GameObject headToDestroy;
-    private Animator animator;
-
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -27,6 +21,5 @@ public class ZombieHead : MonoBehaviour
             part.AddExplosionForce(100.0f, transform.position, 5.0f);
         }
         Destroy(headToDestroy);
-        animator.Play("Z_FallingBack");
     }
 }
