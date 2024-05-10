@@ -4,16 +4,23 @@ using UnityEngine;
 
 public class ZombieHead : MonoBehaviour
 {
+    private GameObject rootParent;
+
     [SerializeField] private List<Rigidbody> allParts = new List<Rigidbody>();
     [SerializeField] private GameObject headReplacement;
     [SerializeField] private GameObject headToDestroy;
+
+    private void Start()
+    {
+        rootParent = transform.root.gameObject;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (!collision.gameObject.CompareTag("Bullet"))
             return;
-        gameObject.GetComponent<Enemy>().TakeDamage(30);
-        if (gameObject.GetComponent<Enemy>().GetHealth() == 0)
+        rootParent.GetComponent<Enemy>().TakeDamage(30);
+        if (rootParent.GetComponent<Enemy>().GetHealth() == 0)
         {
             GameObject.Instantiate(headReplacement, transform.position, transform.rotation);
             foreach (Rigidbody part in allParts)
