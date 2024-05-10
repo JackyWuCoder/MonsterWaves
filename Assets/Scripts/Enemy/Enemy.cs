@@ -54,6 +54,10 @@ public class Enemy : MonoBehaviour
     protected virtual void Update()
     {
         healthBar.value = health;
+        if (healthBar.value <= 0)
+        {
+            healthBar.gameObject.SetActive(false);
+        }
         // Check if enemy is dead.
         if (health == 0)
         {
