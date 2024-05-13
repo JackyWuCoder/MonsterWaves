@@ -38,6 +38,14 @@ public class Weapon : MonoBehaviour
     [SerializeField] int bulletsLeft;
     [SerializeField] bool isReloading;
 
+    public enum WeaponModel
+    { 
+        Pistol1,
+        M4
+    }
+
+    [SerializeField] private WeaponModel thisWeaponModel;
+
     public enum ShootingMode
     {
         Single,
@@ -102,7 +110,7 @@ public class Weapon : MonoBehaviour
 
         muzzleEffect.GetComponent<ParticleSystem>().Play();
         animator.SetTrigger("Recoil");
-        SoundManager.Instance.shootingSoundPistol1.Play();
+        SoundManager.Instance.PlayShootingSound(thisWeaponModel);
 
         readyToShoot = false;
         Vector3 shootingDirection = CalculateDirectionAndSpread().normalized;
@@ -131,7 +139,7 @@ public class Weapon : MonoBehaviour
 
     private void Reload()
     {
-        SoundManager.Instance.reloadingSoundPistol1.Play();
+        SoundManager.Instance.PlayReloadSound(thisWeaponModel);
         animator.SetTrigger("Reload");
         isReloading = true;
         Invoke("ReloadCompleted", reloadTime);
