@@ -30,7 +30,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float bulletPrefabLifeTime = 3.0f; // seconds
 
     [SerializeField] private GameObject muzzleEffect;
-    [SerializeField] private Animator animator;
+    private Animator animator;
 
     // Reloading
     [SerializeField] float reloadTime;
@@ -132,6 +132,7 @@ public class Weapon : MonoBehaviour
     private void Reload()
     {
         SoundManager.Instance.reloadingSoundPistol1.Play();
+        animator.SetTrigger("Reload");
         isReloading = true;
         Invoke("ReloadCompleted", reloadTime);
     }
