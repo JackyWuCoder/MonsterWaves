@@ -63,6 +63,8 @@ public class Enemy : MonoBehaviour
         {
             currentState = EnemyState.Dead;
             // Perform any cleanup or death animations here.
+            Animator animator = GetComponent<Animator>();
+            animator.Play("Death");
             return; // Exit Update function if enemy is dead.
         }
         CanSeePlayer();
