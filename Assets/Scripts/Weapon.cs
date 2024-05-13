@@ -71,6 +71,8 @@ public class Weapon : MonoBehaviour
     {
         muzzleEffect.GetComponent<ParticleSystem>().Play();
         animator.SetTrigger("Recoil");
+        SoundManager.Instance.shootingSoundPistol1.Play();
+
         readyToShoot = false;
         Vector3 shootingDirection = CalculateDirectionAndSpread().normalized;
         // Instantiate the bullet
