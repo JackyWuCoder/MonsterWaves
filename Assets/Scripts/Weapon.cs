@@ -1,13 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
     // Shooting
     [Header("Shooting")]
-    [SerializeField] bool isShooting, readyToShoot;
+    [SerializeField] bool isShooting;
+    [SerializeField] bool readyToShoot;
     private bool allowReset = true;
     [SerializeField] private float shootingDelay = 0f;
 
@@ -30,8 +32,17 @@ public class Weapon : MonoBehaviour
     [SerializeField] private GameObject muzzleEffect;
     [SerializeField] private Animator animator;
 
+    // Reloading
+    [SerializeField] float reloadTime;
+    [SerializeField] int magazineSize;
+    [SerializeField] int bulletsLeft;
+    [SerializeField] bool isReloading;
+
+    // UI
+    [SerializeField] TextMeshProUGUI ammoDisplay;
+
     public enum ShootingMode
-    { 
+    {
         Single,
         Burst,
         Auto
@@ -44,6 +55,8 @@ public class Weapon : MonoBehaviour
         readyToShoot = true;
         burstBulletsLeft = bulletsPerBurst;
         animator = GetComponent<Animator>();
+
+        bulletsLeft = magazineSize;
     }
 
     // Update is called once per frame
@@ -51,14 +64,27 @@ public class Weapon : MonoBehaviour
     {
         if (currentShootingMode == ShootingMode.Auto)
         {
-            // Holding Down Left moust Button
+            // Holding Down Left mouse Button.
             isShooting = Input.GetKey(KeyCode.Mouse0);
         }
         else if (currentShootingMode == ShootingMode.Single ||
             currentShootingMode == ShootingMode.Burst)
         {
-            // Clicking Left Mouse Button Once
+            // Clicking Left Mouse Button Once.
             isShooting = Input.GetKeyDown(KeyCode.Mouse0);
+        }
+        if ((Input.GetKeyDown(KeyCode.R)) && (bulletsLeft < magazineSize) && (!isReloading))
+        {
+            Reload();
+        }
+        // Auto reload when magazine is empty.
+        if (readyToShoot && !isShooting && !isReloading && (bulletsLeft <= 0))
+        {
+            Reload();
+        }
+        if (ammoDisplay != null)
+        {
+            ammoDisplay.text = $"{bulletsLeft/bulletsPerBurst}/{magazineSize / bulletsPerBurst}";
         }
         if (readyToShoot && isShooting)
         {
@@ -69,6 +95,8 @@ public class Weapon : MonoBehaviour
 
     private void FireWeapon()
     {
+        bulletsLeft--;
+
         muzzleEffect.GetComponent<ParticleSystem>().Play();
         animator.SetTrigger("Recoil");
         SoundManager.Instance.shootingSoundPistol1.Play();
@@ -96,6 +124,18 @@ public class Weapon : MonoBehaviour
             burstBulletsLeft--;
             Invoke("FireWeapon", shootingDelay);
         }
+    }
+
+    private void Reload()
+    {
+        isReloading = true;
+        Invoke("ReloadCompleted", reloadTime);
+    }
+
+    private void ReloadCompleted()
+    {
+        isReloading = false;
+        bulletsLeft = magazineSize;
     }
 
     private void ResetShot()
