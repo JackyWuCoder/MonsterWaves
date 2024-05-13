@@ -28,7 +28,7 @@ public class CyberMonster : Enemy
         base.Update();
         if (health == 0)
         {
-            animator.Play("Death");
+            animator.Play("Death", 1);
         }
     }
 

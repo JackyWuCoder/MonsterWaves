@@ -9,6 +9,10 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    // Death and Despawn Delay
+    protected Animator animator;
+    [SerializeField] protected float despawnDelay = 3.0f;
+
     private const float MAXHEALTH = 100;
     protected float health;
     [SerializeField] protected Slider healthBar;
@@ -44,6 +48,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         health = MAXHEALTH;
@@ -112,6 +117,24 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         health = Mathf.Clamp(health, 0, MAXHEALTH);
+    }
+
+    public virtual void Die()
+    {
+        // Play the death animation
+        animator.Play("Death");
+
+        // Start a coroutin to despawn the enemy after a delay
+        StartCoroutine(DespawnAfterDelay());
+    }
+
+    IEnumerator DespawnAfterDelay()
+    {
+        // Wait for the specified delay
+        yield return new WaitForSeconds(despawnDelay);
+
+        // Destroy the enemy GameObject
+        Destroy(gameObject);
     }
 
 }
