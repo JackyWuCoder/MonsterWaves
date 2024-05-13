@@ -59,6 +59,10 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if ((bulletsLeft == 0) && isShooting)
+        {
+            SoundManager.Instance.emptyMagazineSoundPistol1.Play();
+        }
         if (currentShootingMode == ShootingMode.Auto)
         {
             // Holding Down Left mouse Button.
@@ -125,6 +129,7 @@ public class Weapon : MonoBehaviour
 
     private void Reload()
     {
+        SoundManager.Instance.reloadingSoundPistol1.Play();
         isReloading = true;
         Invoke("ReloadCompleted", reloadTime);
     }
