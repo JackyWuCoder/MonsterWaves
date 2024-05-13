@@ -38,9 +38,6 @@ public class Weapon : MonoBehaviour
     [SerializeField] int bulletsLeft;
     [SerializeField] bool isReloading;
 
-    // UI
-    [SerializeField] TextMeshProUGUI ammoDisplay;
-
     public enum ShootingMode
     {
         Single,
@@ -82,14 +79,14 @@ public class Weapon : MonoBehaviour
         {
             Reload();
         }
-        if (ammoDisplay != null)
-        {
-            ammoDisplay.text = $"{bulletsLeft/bulletsPerBurst}/{magazineSize / bulletsPerBurst}";
-        }
         if (readyToShoot && isShooting)
         {
             burstBulletsLeft = bulletsPerBurst;
             FireWeapon();
+        }
+        if (AmmoManager.Instance.ammoDisplay != null)
+        {
+            AmmoManager.Instance.ammoDisplay.text = $"{bulletsLeft / bulletsPerBurst}/{magazineSize / bulletsPerBurst}";
         }
     }
 
