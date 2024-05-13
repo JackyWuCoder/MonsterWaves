@@ -28,6 +28,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float bulletPrefabLifeTime = 3.0f; // seconds
 
     [SerializeField] private GameObject muzzleEffect;
+    [SerializeField] private Animator animator;
 
     public enum ShootingMode
     { 
@@ -42,6 +43,7 @@ public class Weapon : MonoBehaviour
     {
         readyToShoot = true;
         burstBulletsLeft = bulletsPerBurst;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -68,6 +70,7 @@ public class Weapon : MonoBehaviour
     private void FireWeapon()
     {
         muzzleEffect.GetComponent<ParticleSystem>().Play();
+        animator.SetTrigger("Recoil");
         readyToShoot = false;
         Vector3 shootingDirection = CalculateDirectionAndSpread().normalized;
         // Instantiate the bullet
