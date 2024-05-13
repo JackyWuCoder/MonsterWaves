@@ -78,11 +78,13 @@ public class Weapon : MonoBehaviour
         {
             Reload();
         }
+        /*
         // Auto reload when magazine is empty.
         if (readyToShoot && !isShooting && !isReloading && (bulletsLeft <= 0))
         {
             Reload();
         }
+        */
         if (readyToShoot && isShooting && (bulletsLeft > 0))
         {
             burstBulletsLeft = bulletsPerBurst;
