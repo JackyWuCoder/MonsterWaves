@@ -17,8 +17,8 @@ public class Weapon : MonoBehaviour
 
     // Bursting
     [Header("Bursting")]
-    [SerializeField] private int bulletsPerBurst = 3;
-    [SerializeField] private int burstBulletsLeft;
+    public int bulletsPerBurst = 3;
+    public int burstBulletsLeft;
 
     // Spread
     [Header("Spread")]
@@ -36,7 +36,7 @@ public class Weapon : MonoBehaviour
 
     // Reloading
     [SerializeField] float reloadTime;
-    [SerializeField] int magazineSize;
+    public int magazineSize;
     [SerializeField] int bulletsLeft;
     [SerializeField] bool isReloading;
 
@@ -51,7 +51,7 @@ public class Weapon : MonoBehaviour
         M4
     }
 
-    [SerializeField] private WeaponModel thisWeaponModel;
+    public WeaponModel thisWeaponModel;
 
     public enum ShootingMode
     {

@@ -7,8 +7,8 @@ public class WeaponManager : MonoBehaviour
 {
     public static WeaponManager Instance { get; set; }
 
-    [SerializeField] private List<GameObject> weaponSlots;
-    [SerializeField] private GameObject activeWeaponSlot;
+    public List<GameObject> weaponSlots;
+    public GameObject activeWeaponSlot;
 
     private void Awake()
     {
