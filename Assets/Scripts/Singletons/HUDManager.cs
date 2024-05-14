@@ -39,7 +39,7 @@ public class HUDManager : MonoBehaviour
 
         if (activeWeapon)
         {
-            magazineAmmoUI.text = $"{activeWeapon.burstBulletsLeft / activeWeapon.bulletsPerBurst}";
+            magazineAmmoUI.text = $"{activeWeapon.bulletsLeft / activeWeapon.bulletsPerBurst}";
             totalAmmoUI.text = $"{activeWeapon.magazineSize / activeWeapon.bulletsPerBurst}";
 
             Weapon.WeaponModel model = activeWeapon.thisWeaponModel;

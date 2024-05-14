@@ -35,10 +35,10 @@ public class Weapon : MonoBehaviour
     internal Animator animator;
 
     // Reloading
-    [SerializeField] float reloadTime;
+    [SerializeField] private float reloadTime;
     public int magazineSize;
-    [SerializeField] int bulletsLeft;
-    [SerializeField] bool isReloading;
+    public int bulletsLeft;
+    [SerializeField] private bool isReloading;
 
     // Weapon spawn position and rotation relative to the player.
     [Header("Player Weapon Transform Values")]
