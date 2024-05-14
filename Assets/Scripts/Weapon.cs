@@ -195,4 +195,24 @@ public class Weapon : MonoBehaviour
         yield return new WaitForSeconds(delay);
         Destroy(bullet);
     }
+
+    public Vector3 GetSpawnPosition()
+    {
+        return spawnPosition;
+    }
+
+    public Vector3 GetSpawnRotation()
+    {
+        return spawnRotation;
+    }
+
+    public bool GetIsActiveWeapon() 
+    {
+        return isActiveWeapon;
+    }
+
+    public void SetIsActiveWeapon(bool active)
+    {
+        isActiveWeapon = active;
+    }
 }
