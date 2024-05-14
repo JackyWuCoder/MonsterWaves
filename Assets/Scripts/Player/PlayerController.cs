@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         {
             if (playerSprintBar.GetSprintTimer() == 0)
             {
-                isSprinting = false;
+                PlayerSprint();
             }
             else 
             {
