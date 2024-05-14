@@ -25,12 +25,6 @@ public class PlayerInteract : MonoBehaviour
         RaycastHit hitInfo; // Variable that stores the collision information
         if (Physics.Raycast(ray, out hitInfo, rayDistance, interactableMask))
         {
-            GameObject objectHitByRaycast = hitInfo.transform.gameObject;
-            if (objectHitByRaycast.GetComponent<Weapon>())
-            {
-                print("Weapon Selected");
-            }
-
             if (hitInfo.collider.GetComponent<Interactable>() != null)
             {
                 Interactable interactable = hitInfo.collider.GetComponent<Interactable>();
