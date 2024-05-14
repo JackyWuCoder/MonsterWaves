@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -123,5 +124,10 @@ public class WeaponManager : MonoBehaviour
                 queue.Enqueue(child);
             }
         }
+    }
+
+    internal void PickupAmmo(string name)
+    {
+        Debug.Log($"Picked up ammo: {name}");
     }
 }
