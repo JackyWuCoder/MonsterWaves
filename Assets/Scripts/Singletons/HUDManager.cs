@@ -18,6 +18,8 @@ public class HUDManager : MonoBehaviour
     public Image activeWeaponUI;
     public Image unActiveWeaponUI;
 
+    public Sprite emptySlot;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -60,7 +62,7 @@ public class HUDManager : MonoBehaviour
         switch (model)
         {
             case Weapon.WeaponModel.Pistol1:
-                return Instantiate(Resources.Load<GameObject>("Pistol1_Weapon")).GetComponent<SpriteRenderer>().sprite;
+                return Instantiate(Resources.Load<GameObject>("Deagle_Weapon")).GetComponent<SpriteRenderer>().sprite;
             case Weapon.WeaponModel.M4:
                 return Instantiate(Resources.Load<GameObject>("M4_Weapon")).GetComponent<SpriteRenderer>().sprite;
             default:
