@@ -47,7 +47,14 @@ public class PlayerController : MonoBehaviour
         // Sprint Bar Updates
         if (isSprinting)
         {
-            playerSprintBar.DecreaseSprintTimer();
+            if (playerSprintBar.GetSprintTimer() == 0)
+            {
+                isSprinting = false;
+            }
+            else 
+            {
+                playerSprintBar.DecreaseSprintTimer();
+            }
         }
         else
         {
@@ -139,14 +146,13 @@ public class PlayerController : MonoBehaviour
     public void PlayerSprint()
     {
         isSprinting = !isSprinting;
-        if (isSprinting && (playerSprintBar.GetSprintTimer() > 0))
+        if (isSprinting)
         {
             speed = 8.0f;
         }
         else
         {
             speed = 5.0f;
-            isSprinting = false;
         }
     }
 }
