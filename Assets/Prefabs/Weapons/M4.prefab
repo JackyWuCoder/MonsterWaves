@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3333522869209608758}
   - component: {fileID: 9169660046765874611}
   - component: {fileID: 8109989072332690610}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: cart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 872321886800604576}
   - component: {fileID: 3230299250723045375}
   - component: {fileID: 7611187138448777113}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: m4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1842934818945482515}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: BulletSpawnPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +209,7 @@ GameObject:
   - component: {fileID: 980213274886236866}
   - component: {fileID: 961214890885559438}
   - component: {fileID: 7106184997638355569}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: hold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 8785306969636609837}
   - component: {fileID: 812898895180300897}
   - component: {fileID: 6465349903965747222}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: MuzzleFlashEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5075,7 +5075,7 @@ GameObject:
   - component: {fileID: 2041085103887677407}
   - component: {fileID: 3997366659207089510}
   - component: {fileID: 2950965257572965258}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5158,7 +5158,7 @@ GameObject:
   - component: {fileID: 5168364846000572680}
   - component: {fileID: 1960309513233020924}
   - component: {fileID: 3486607446019049138}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: silencer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5241,7 +5241,7 @@ GameObject:
   - component: {fileID: 7203133755609228838}
   - component: {fileID: 8976498526195474106}
   - component: {fileID: 5353987878468396898}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5326,7 +5326,7 @@ GameObject:
   - component: {fileID: 3762440943270487937}
   - component: {fileID: 1363779590504923996}
   - component: {fileID: 6362563770607371118}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: M4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

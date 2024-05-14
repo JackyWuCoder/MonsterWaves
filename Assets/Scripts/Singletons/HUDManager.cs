@@ -45,6 +45,8 @@ public class HUDManager : MonoBehaviour
             Weapon.WeaponModel model = activeWeapon.thisWeaponModel;
             ammoTypeUI.sprite = GetAmmoSprite(model);
 
+            activeWeaponUI.sprite = GetWeaponSprite(model);
+
             if (unActiveWeapon)
             {
                 unActiveWeaponUI.sprite = GetWeaponSprite(unActiveWeapon.thisWeaponModel);
@@ -54,6 +56,9 @@ public class HUDManager : MonoBehaviour
         {
             magazineAmmoUI.text = "";
             totalAmmoUI.text = "";
+
+            ammoTypeUI.sprite = emptySlot;
+            unActiveWeaponUI.sprite = emptySlot;
         }
     }
 

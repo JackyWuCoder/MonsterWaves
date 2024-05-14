@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6023024066675063085}
   - component: {fileID: 3296225196952999147}
   - component: {fileID: 6865072252056337091}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: colt1911
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1943933065327896533}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 5035482446427539517}
   - component: {fileID: 3026487151870152173}
   - component: {fileID: 6677855964660264854}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: MuzzleFlashEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4909,7 +4909,7 @@ GameObject:
   - component: {fileID: 5152145012645663928}
   - component: {fileID: 130115673947871240}
   - component: {fileID: 6511219436929715763}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: cartridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4993,7 +4993,7 @@ GameObject:
   - component: {fileID: 7855304772532334640}
   - component: {fileID: 2032289783609633813}
   - component: {fileID: 1762636054390996713}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Pistol 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5105,7 +5105,7 @@ GameObject:
   - component: {fileID: 2322491318856491050}
   - component: {fileID: 1506277490279842189}
   - component: {fileID: 7827891589554824099}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
