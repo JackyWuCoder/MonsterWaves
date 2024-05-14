@@ -31,7 +31,9 @@ public class InteractionManager : MonoBehaviour
             {
                 hoveredWeapon = objectHitByRaycast.gameObject.GetComponent<Weapon>();
                 hoveredWeapon.GetComponent<Outline>().enabled = true;
-                Debug.Log("Weapon Selected");
+                if (Input.GetKeyDown(KeyCode.F)) {
+                    WeaponManager.Instance.PickupWeapon(objectHitByRaycast.gameObject);
+                }
             }
             else
             {
