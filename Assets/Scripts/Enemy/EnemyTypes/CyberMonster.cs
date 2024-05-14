@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class CyberMonster : Enemy
 {
     private CyberMonsterStateMachine stateMachine;
-    private Animator animator;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletVelocity = 40.0f;
 
@@ -20,7 +19,6 @@ public class CyberMonster : Enemy
         base.Start();
         stateMachine = GetComponent<CyberMonsterStateMachine>();
         stateMachine.Initialize();
-        animator = GetComponent<Animator>();
     }
 
     protected override void Update()

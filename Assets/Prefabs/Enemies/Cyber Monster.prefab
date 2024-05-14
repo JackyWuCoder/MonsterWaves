@@ -2190,7 +2190,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 100
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4035,6 +4035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5964d6ecba517c4299aba05d180a9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  despawnDelay: 3
   healthBar: {fileID: 8575478954347807803}
   player: {fileID: 0}
   path: {fileID: 8847697294342228609}

@@ -38,6 +38,11 @@ public class Weapon : MonoBehaviour
     [SerializeField] int bulletsLeft;
     [SerializeField] bool isReloading;
 
+    // Weapon spawn position and rotation relative to the player.
+    [Header("Player Weapon Transform Values")]
+    [SerializeField] private Vector3 spawnPosition;
+    [SerializeField] private Vector3 spawnRotation;
+
     public enum WeaponModel
     { 
         Pistol1,

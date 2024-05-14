@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 3351676072803247601}
   - component: {fileID: 8040379777056307093}
   - component: {fileID: 7400593493807187743}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AssaultRifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,5 +144,7 @@ MonoBehaviour:
   magazineSize: 0
   bulletsLeft: 0
   isReloading: 0
+  spawnPosition: {x: 0, y: 0, z: 0}
+  spawnRotation: {x: 0, y: 0, z: 0}
   thisWeaponModel: 0
   currentShootingMode: 2
