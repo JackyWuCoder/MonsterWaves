@@ -7,7 +7,7 @@ public abstract class Interactable : MonoBehaviour
     // Add or remove an InteractionEvent component to this gameobject.
     public bool useEvents;
     // The message displayed to player when looking at an interactable object.
-    [SerializeField] private string promptMessage;
+    [SerializeField] protected string promptMessage;
 
     // Template Method Design Pattern
     // This function will be called from the player.
