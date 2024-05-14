@@ -32,7 +32,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float bulletPrefabLifeTime = 3.0f; // seconds
 
     [SerializeField] private GameObject muzzleEffect;
-    private Animator animator;
+    internal Animator animator;
 
     // Reloading
     [SerializeField] float reloadTime;

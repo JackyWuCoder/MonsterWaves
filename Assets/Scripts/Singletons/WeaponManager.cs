@@ -65,6 +65,7 @@ public class WeaponManager : MonoBehaviour
         pickedUpWeapon.transform.localPosition = new Vector3(weapon.GetSpawnPosition().x, weapon.GetSpawnPosition().y, weapon.GetSpawnPosition().z);
         pickedUpWeapon.transform.localRotation = Quaternion.Euler(weapon.GetSpawnRotation().x, weapon.GetSpawnRotation().y, weapon.GetSpawnRotation().z);
         weapon.SetIsActiveWeapon(true);
+        weapon.animator.enabled = true;
     }
 
     private void DropCurrentWeapon(GameObject pickedupWeapon)
@@ -73,6 +74,7 @@ public class WeaponManager : MonoBehaviour
         {
             var weaponToDrop = activeWeaponSlot.transform.GetChild(0).gameObject;
             weaponToDrop.GetComponent<Weapon>().SetIsActiveWeapon(false);
+            weaponToDrop.GetComponent<Weapon>().animator.enabled = false;
             weaponToDrop.transform.SetParent(pickedupWeapon.transform.parent);
             weaponToDrop.transform.localPosition = pickedupWeapon.transform.localPosition;
             weaponToDrop.transform.localRotation = pickedupWeapon.transform.localRotation;
