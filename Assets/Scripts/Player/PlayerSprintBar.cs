@@ -57,7 +57,15 @@ public class PlayerSprintBar : MonoBehaviour
             percentComplete *= percentComplete;
             frontSprintBar.fillAmount = Mathf.Lerp(fillF, backSprintBar.fillAmount, percentComplete);
         }
-        sprintText.text = $"{sprintTimer}";
+        if (Mathf.Abs(frontSprintBar.fillAmount - 1) <= 0.01)
+        {
+            sprintText.text = "MAX";
+        }
+        else
+        {
+            Debug.Log(frontSprintBar.fillAmount);
+            sprintText.text = $"{sprintTimer}";
+        }
     }
 
     public void DecreaseSprintTimer()
