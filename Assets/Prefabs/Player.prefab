@@ -418,8 +418,8 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -492,6 +492,7 @@ GameObject:
   - component: {fileID: 4766004741970994657}
   - component: {fileID: 6916967869410191158}
   - component: {fileID: 3437950047694095530}
+  - component: {fileID: 7344129237603819300}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -627,3 +628,20 @@ MonoBehaviour:
   overlay: {fileID: 0}
   duration: 2
   fadeSpeed: 1.5
+--- !u!114 &7344129237603819300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8906655254846294012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f3162dbffa3c244684b6a568304406a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSprint: 10
+  chipSpeed: 2
+  frontSprintBar: {fileID: 0}
+  backSprintBar: {fileID: 0}
+  sprintText: {fileID: 0}

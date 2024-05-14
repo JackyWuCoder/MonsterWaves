@@ -30,17 +30,29 @@ public class PlayerController : MonoBehaviour
 
     [Header("Sprint")]
     [SerializeField] private bool isSprinting = false;
-    
+
+    private PlayerSprintBar playerSprintBar;
+
     private void Start()
     {
         // Locking the cursor to the middle of the screen and making it invisible.
         Cursor.lockState = CursorLockMode.Locked;
         controller = GetComponent<CharacterController>();
+        playerSprintBar = GetComponent<PlayerSprintBar>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Sprint Bar Updates
+        if (isSprinting)
+        {
+            playerSprintBar.DecreaseSprintTimer();
+        }
+        else
+        {
+            playerSprintBar.IncreaseSprintTimer();
+        }
         // Ground check
         isGrounded = controller.isGrounded;
         if (isLerpCrouching)
@@ -127,13 +139,14 @@ public class PlayerController : MonoBehaviour
     public void PlayerSprint()
     {
         isSprinting = !isSprinting;
-        if (isSprinting)
+        if (isSprinting && (playerSprintBar.GetSprintTimer() > 0))
         {
             speed = 8.0f;
         }
         else
         {
             speed = 5.0f;
+            isSprinting = false;
         }
     }
 }
