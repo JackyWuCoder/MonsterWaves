@@ -52,7 +52,8 @@ public class InteractionManager : MonoBehaviour
                 hoveredAmmoBox.GetComponent<Outline>().enabled = true;
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    WeaponManager.Instance.PickupAmmo(objectHitByRaycast.gameObject.name);
+                    WeaponManager.Instance.PickupAmmo(hoveredAmmoBox);
+                    Destroy(objectHitByRaycast.gameObject);
                 }
             }
             else
