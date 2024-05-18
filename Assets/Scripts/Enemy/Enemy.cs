@@ -108,11 +108,11 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             animator.SetTrigger("DIE");
-            Destroy(gameObject);
+            //Destroy(gameObject);
             // Play the death animation
-            //animator.Play("Death");
+            animator.Play("Death");
             // Start a coroutin to despawn the enemy after a delay
-            // StartCoroutine(DespawnAfterDelay());
+            StartCoroutine(DespawnAfterDelay());
         }
         else
         {
