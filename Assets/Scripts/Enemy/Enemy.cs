@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
     protected float health;
     [SerializeField] protected Slider healthBar;
 
+    // NavMeshAgent
     protected NavMeshAgent agent;
     [SerializeField] protected GameObject player;
     [SerializeField] protected Path path;
@@ -60,6 +61,14 @@ public class Enemy : MonoBehaviour
     {
         healthBar.value = health;
         CanSeePlayer();
+        if (agent.velocity.magnitude > 0.1f)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
     }
 
     public Path GetPath()
