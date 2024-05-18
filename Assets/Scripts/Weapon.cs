@@ -7,6 +7,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     [SerializeField] private bool isActiveWeapon;
+    [SerializeField] int weaponDamage;
 
     // Shooting
     [Header("Shooting")]
@@ -118,11 +119,12 @@ public class Weapon : MonoBehaviour
         muzzleEffect.GetComponent<ParticleSystem>().Play();
         animator.SetTrigger("Recoil");
         SoundManager.Instance.PlayShootingSound(thisWeaponModel);
-
         readyToShoot = false;
         Vector3 shootingDirection = CalculateDirectionAndSpread().normalized;
         // Instantiate the bullet
         GameObject bullet = Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
+        Bullet bul = bullet.GetComponent<Bullet>();
+        bul.SetBulletDamage(weaponDamage);
         // Pointing the bullet to face the shooting direction.
         bullet.transform.forward = shootingDirection;
         // Shoot the bullet

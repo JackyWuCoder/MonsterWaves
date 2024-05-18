@@ -59,19 +59,6 @@ public class Enemy : MonoBehaviour
     protected virtual void Update()
     {
         healthBar.value = health;
-        if (healthBar.value <= 0)
-        {
-            healthBar.gameObject.SetActive(false);
-        }
-        // Check if enemy is dead.
-        if (health == 0)
-        {
-            currentState = EnemyState.Dead;
-            // Perform any cleanup or death animations here.
-            Animator animator = GetComponent<Animator>();
-            animator.Play("Death");
-            return; // Exit Update function if enemy is dead.
-        }
         CanSeePlayer();
     }
 
@@ -117,18 +104,36 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         health = Mathf.Clamp(health, 0, MAXHEALTH);
+
+        if (health <= 0)
+        {
+            animator.SetTrigger("DIE");
+            Destroy(gameObject);
+            // Play the death animation
+            //animator.Play("Death");
+            // Start a coroutin to despawn the enemy after a delay
+            // StartCoroutine(DespawnAfterDelay());
+        }
+        else
+        {
+            animator.SetTrigger("Damage");
+        }
+
+        if (healthBar.value <= 0)
+        {
+            healthBar.gameObject.SetActive(false);
+        }
+        // Check if enemy is dead.
+        if (health <= 0)
+        {
+            currentState = EnemyState.Dead;
+            // Perform any cleanup or death animations here.
+            animator.Play("Death");
+            return; // Exit Update function if enemy is dead.
+        }
     }
 
-    public virtual void Die()
-    {
-        // Play the death animation
-        animator.Play("Death");
-
-        // Start a coroutin to despawn the enemy after a delay
-        StartCoroutine(DespawnAfterDelay());
-    }
-
-    IEnumerator DespawnAfterDelay()
+    public IEnumerator DespawnAfterDelay()
     {
         // Wait for the specified delay
         yield return new WaitForSeconds(despawnDelay);

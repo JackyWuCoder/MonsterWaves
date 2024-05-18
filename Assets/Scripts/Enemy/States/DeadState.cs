@@ -11,10 +11,7 @@ public class DeadState : BaseState
 
     public override void Perform()
     {
-        if (enemy.GetHealth() == 0)
-        {
-            enemy.Die();
-        }
+        
     }
 
     public override void Exit()

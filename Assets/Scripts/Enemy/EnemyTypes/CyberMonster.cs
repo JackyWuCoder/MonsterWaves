@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class CyberMonster : Enemy
 {
+    private int gunDamage = 10;
+
     private CyberMonsterStateMachine stateMachine;
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float bulletVelocity = 40.0f;
@@ -41,6 +43,8 @@ public class CyberMonster : Enemy
         Transform gunBarrel = this.gunBarrel;
         // Instantiate a new bullet.
         GameObject bullet = Instantiate(bulletPrefab, gunBarrel.position, Quaternion.identity);
+        Bullet bul = bullet.GetComponent<Bullet>();
+        bul.SetBulletDamage(gunDamage);
         // Calculate the direction to the player.
         Vector3 shootDirection = (player.transform.position - gunBarrel.transform.position).normalized;
         // Add force to the rigidbody of the bullet.

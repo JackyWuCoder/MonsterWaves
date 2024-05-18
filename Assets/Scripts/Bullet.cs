@@ -2,13 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float bulletDamage = 10.0f;
+    private int bulletDamage;
+
+    public void SetBulletDamage(int bulletDamage)
+    {
+        this.bulletDamage = bulletDamage;
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         GameObject objectWeHit = collision.gameObject;
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(bulletDamage);
+        }
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(bulletDamage);
