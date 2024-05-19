@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class ZombieHand : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] private int damage;
+
+    public int GetDamage() {
+        return damage;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetDamage(int damage)
     {
-        
+        this.damage = damage;
     }
+
 }

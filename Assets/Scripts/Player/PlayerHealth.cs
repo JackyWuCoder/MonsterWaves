@@ -94,7 +94,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.CompareTag("ZombieHand"))
         {
-            TakeDamage(5);
+            TakeDamage(other.GetComponent<ZombieHand>().GetDamage());
         }
     }
 
