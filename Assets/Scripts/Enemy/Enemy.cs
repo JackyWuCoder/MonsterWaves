@@ -150,4 +150,15 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, 2.5f); // Attacking // Stop Attacking
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, 18f); // Detection (Start Chasing)
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, 21f); // Stop Chasing
+    }
 }
