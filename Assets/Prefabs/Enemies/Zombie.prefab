@@ -3870,7 +3870,7 @@ GameObject:
   - component: {fileID: 2953473283997556473}
   m_Layer: 7
   m_Name: Path
-  m_TagString: Untagged
+  m_TagString: Waypoints
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

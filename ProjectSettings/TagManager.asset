@@ -9,6 +9,7 @@ TagManager:
   - Wall
   - Beer
   - Bullet
+  - Waypoints
   layers:
   - Default
   - TransparentFX
