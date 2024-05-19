@@ -1932,6 +1932,7 @@ GameObject:
   - component: {fileID: 1176251599346837252}
   - component: {fileID: 5876489052794404491}
   - component: {fileID: 1263621402685634634}
+  - component: {fileID: 8851999963474627541}
   m_Layer: 7
   m_Name: ZombieLeftHand
   m_TagString: Untagged
@@ -2025,6 +2026,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8851999963474627541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347600630453979623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0753dea9f6258774a9e15966f8aa0cdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4418839904327800061
 GameObject:
   m_ObjectHideFlags: 0

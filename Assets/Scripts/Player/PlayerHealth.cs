@@ -90,6 +90,14 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("ZombieHand"))
+        {
+            TakeDamage(5);
+        }
+    }
+
     public void RestoreHealth(float healAmount) 
     {
         health += healAmount;
