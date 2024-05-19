@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patrolTime: 10
   detectionAreaRadius: 18
-  patrolSpeed: 2
+  patrolSpeed: 1.5
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0

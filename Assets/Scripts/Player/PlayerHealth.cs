@@ -80,6 +80,14 @@ public class PlayerHealth : MonoBehaviour
         lerpTimer = 0f;
         durationTimer = 0;
         overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, 1);
+        if (health <= 0)
+        {
+            print("Player Dead");
+        }
+        else
+        {
+            print("Player Hit");
+        }
     }
 
     public void RestoreHealth(float healAmount) 
