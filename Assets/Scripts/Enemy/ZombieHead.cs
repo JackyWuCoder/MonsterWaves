@@ -19,7 +19,7 @@ public class ZombieHead : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Bullet"))
             return;
-        GameObject zombie = rootParent.transform.Find("Zombie").gameObject;
+        GameObject zombie = GetRootParent(this.gameObject);
         zombie.GetComponent<Enemy>().TakeDamage(30);
         if (zombie.GetComponent<Enemy>().GetHealth() == 0)
         {
@@ -31,5 +31,16 @@ public class ZombieHead : MonoBehaviour
             }
             Destroy(headToDestroy);
         }
+    }
+
+    public GameObject GetRootParent(GameObject child)
+    {
+        Transform currentParent = child.transform;
+        // Traverse upwards in the hierarchy
+        while (currentParent.parent != null)
+        {
+            currentParent = currentParent.parent;
+        }
+        return currentParent.gameObject;
     }
 }

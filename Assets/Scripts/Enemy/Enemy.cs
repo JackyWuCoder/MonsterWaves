@@ -30,6 +30,8 @@ public class Enemy : MonoBehaviour
     // Allows for the enemy to see at eye level.
     [SerializeField] protected float eyeHeight;
 
+    public bool isDead;
+
     public NavMeshAgent Agent { get => agent; }
     public GameObject Player { get => player; }
     public Vector3 LastSeenPlayerPos { 
@@ -113,9 +115,10 @@ public class Enemy : MonoBehaviour
         // Check if enemy is dead.
         if (health <= 0)
         {
+            isDead = true;
             currentState = EnemyState.Dead;
             // Perform any cleanup or death animations here.
-            animator.Play("Death");
+            // animator.Play("Death");
             return; // Exit Update function if enemy is dead.
         }
     }

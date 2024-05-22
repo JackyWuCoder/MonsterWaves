@@ -21,7 +21,10 @@ public class Bullet : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(bulletDamage);
+            if (collision.gameObject.GetComponent<Enemy>().isDead == false)
+            {
+                collision.gameObject.GetComponent<Enemy>().TakeDamage(bulletDamage);
+            }
             CreateBloodSprayEffect(collision);
             Destroy(gameObject);
         }

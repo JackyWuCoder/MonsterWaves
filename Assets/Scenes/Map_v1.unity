@@ -10849,10 +10849,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 342691571}
-    - target: {fileID: 5516855790440590127, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+    - target: {fileID: 5843074704863688560, guid: b3efd9a2fcc272a4a981cdfc063f3499,
         type: 3}
-      propertyPath: zombieDamage
-      value: 2
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6274318500649638122, guid: b3efd9a2fcc272a4a981cdfc063f3499,
         type: 3}
@@ -12548,20 +12548,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1948767489512284987, guid: 484d6a384d6b95a449257b9e4fd2003c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4349080128417467894, guid: 484d6a384d6b95a449257b9e4fd2003c,
         type: 3}
       propertyPath: m_Name
       value: Cyber Monster
-      objectReference: {fileID: 0}
-    - target: {fileID: 4349080128417467894, guid: 484d6a384d6b95a449257b9e4fd2003c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7120950273580065540, guid: 484d6a384d6b95a449257b9e4fd2003c,
         type: 3}
@@ -24723,6 +24713,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletImpactEffectPrefab: {fileID: 1009772175299010742, guid: e7dc04fa0eab92c488b3a46e217f0b15,
+    type: 3}
+  bloodSprayEffect: {fileID: 74706091949843059, guid: 38c82b0b38329a544b64ed77daa4e2e8,
     type: 3}
 --- !u!4 &1565454611
 Transform:
@@ -43233,7 +43225,6 @@ SceneRoots:
   - {fileID: 1839706828}
   - {fileID: 8871782952769130982}
   - {fileID: 109601484}
-  - {fileID: 1659750417}
   - {fileID: 3863731257669007648}
   - {fileID: 5879333651369756532}
   - {fileID: 1225082724}
@@ -43242,6 +43233,7 @@ SceneRoots:
   - {fileID: 2559181148937359173}
   - {fileID: 28885718}
   - {fileID: 901695990}
+  - {fileID: 1659750417}
   - {fileID: 1141474952}
   - {fileID: 1623229813}
   - {fileID: 696042409}

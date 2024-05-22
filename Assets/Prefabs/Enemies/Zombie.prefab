@@ -3778,6 +3778,7 @@ MonoBehaviour:
   sightDistance: 20
   fieldOfView: 85
   eyeHeight: 0
+  isDead: 0
   zombieLeftHand: {fileID: 5819843469164852541}
   zombieRightHand: {fileID: 7077648982185727591}
   zombieDamage: 2
@@ -3808,7 +3809,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
