@@ -106,23 +106,6 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         health = Mathf.Clamp(health, 0, MAX_HEALTH);
-        if (health <= 0)
-        {
-            int randomValue = Random.Range(0, 2); // 0,1
-            if (randomValue == 0)
-            {
-                animator.SetTrigger("DIE1");
-            }
-            else
-            {
-                animator.SetTrigger("DIE2");
-            }
-            // Play the death animation
-            //animator.Play("Death");
-            // Start a coroutin to despawn the enemy after a delay
-            StartCoroutine(DespawnAfterDelay());
-        }
-
         if (healthBar.value <= 0)
         {
             healthBar.gameObject.SetActive(false);
