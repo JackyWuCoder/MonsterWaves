@@ -63,7 +63,6 @@ public class PlayerSprintBar : MonoBehaviour
         }
         else
         {
-            Debug.Log(frontSprintBar.fillAmount);
             sprintText.text = $"{sprintTimer}";
         }
     }

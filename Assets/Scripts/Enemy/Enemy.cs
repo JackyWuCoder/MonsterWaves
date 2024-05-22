@@ -52,7 +52,6 @@ public class Enemy : MonoBehaviour
     {
         health = MAX_HEALTH;
         animator = GetComponent<Animator>();
-
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         currentState = EnemyState.Idle;
@@ -122,10 +121,6 @@ public class Enemy : MonoBehaviour
             //animator.Play("Death");
             // Start a coroutin to despawn the enemy after a delay
             StartCoroutine(DespawnAfterDelay());
-        }
-        else
-        {
-            animator.SetTrigger("DAMAGE");
         }
 
         if (healthBar.value <= 0)

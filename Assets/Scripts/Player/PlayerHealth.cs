@@ -94,6 +94,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.CompareTag("ZombieHand"))
         {
+            Debug.Log("Getting Hit by ZombieHand");
             TakeDamage(other.GetComponent<ZombieHand>().GetDamage());
         }
     }

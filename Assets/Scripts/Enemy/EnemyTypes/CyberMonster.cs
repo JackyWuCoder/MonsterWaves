@@ -37,6 +37,19 @@ public class CyberMonster : Enemy
         return fireRate;
     }
 
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        if (health <= 0)
+        {
+             animator.SetTrigger("DIE");
+        }
+        // Play the death animation
+        //animator.Play("Death");
+        // Start a coroutin to despawn the enemy after a delay
+        StartCoroutine(DespawnAfterDelay());
+    }
+
     public void Shoot()
     {
         // Store reference to the gun barrel.
