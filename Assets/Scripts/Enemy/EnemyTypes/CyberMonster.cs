@@ -44,6 +44,8 @@ public class CyberMonster : Enemy
         {
              animator.SetTrigger("DIE");
         }
+        // Game Over
+        // Respawn Player
         // Play the death animation
         //animator.Play("Death");
         // Start a coroutin to despawn the enemy after a delay

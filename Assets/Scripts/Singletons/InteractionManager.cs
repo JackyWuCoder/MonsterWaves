@@ -31,6 +31,11 @@ public class InteractionManager : MonoBehaviour
             GameObject objectHitByRaycast = hit.transform.gameObject;
             if ((objectHitByRaycast.GetComponent<Weapon>()) && (objectHitByRaycast.GetComponent<Weapon>().GetIsActiveWeapon() == false))
             {
+                // Disable the outline of previously selected item
+                if (hoveredWeapon)
+                {
+                    hoveredWeapon.GetComponent<Outline>().enabled = false;
+                }
                 hoveredWeapon = objectHitByRaycast.gameObject.GetComponent<Weapon>();
                 hoveredWeapon.GetComponent<Outline>().enabled = true;
                 if (Input.GetKeyDown(KeyCode.F)) {
@@ -48,6 +53,11 @@ public class InteractionManager : MonoBehaviour
             // AmmoBox
             if (objectHitByRaycast.GetComponent<AmmoBox>())
             {
+                // Disable the outline of previously selected item
+                if (hoveredAmmoBox)
+                {
+                    hoveredAmmoBox.GetComponent<Outline>().enabled = false;
+                }
                 hoveredAmmoBox = objectHitByRaycast.gameObject.GetComponent<AmmoBox>();
                 hoveredAmmoBox.GetComponent<Outline>().enabled = true;
                 if (Input.GetKeyDown(KeyCode.F))

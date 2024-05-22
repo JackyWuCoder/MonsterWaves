@@ -33,6 +33,8 @@ public class Zombie : Enemy
             {
                 animator.SetTrigger("DIE2");
             }
+            // Game Over
+            // Respawn Player
             // Play the death animation
             //animator.Play("Death");
             // Start a coroutin to despawn the enemy after a delay
