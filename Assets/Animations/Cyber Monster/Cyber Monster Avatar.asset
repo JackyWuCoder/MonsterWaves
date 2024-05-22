@@ -6,7 +6,7 @@ Avatar:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Anim_Cyber_Monsters_2@IdleAvatar
+  m_Name: Cyber Monster Avatar
   m_AvatarSize: 10240
   m_Avatar:
     serializedVersion: 3

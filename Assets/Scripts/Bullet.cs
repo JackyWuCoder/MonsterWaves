@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private int bulletDamage;
+    [SerializeField] private int bulletDamage;
 
     public void SetBulletDamage(int bulletDamage)
     {
@@ -13,10 +13,10 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject objectWeHit = collision.gameObject;
         if(collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(bulletDamage);
+            Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {
@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Beer"))
         {
             Debug.Log("hit a beer bottle");
-            objectWeHit.gameObject.GetComponent<BeerBottle>().Shatter();
+            collision.gameObject.GetComponent<BeerBottle>().Shatter();
             // We will not destroy the bullet on impact, it will get destroyed according to its lifetime
         }
     }

@@ -5830,12 +5830,12 @@ PrefabInstance:
     - target: {fileID: 636433214952224186, guid: b3efd9a2fcc272a4a981cdfc063f3499,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 636433214952224186, guid: b3efd9a2fcc272a4a981cdfc063f3499,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6274318500649638122, guid: b3efd9a2fcc272a4a981cdfc063f3499,
         type: 3}
@@ -5891,6 +5891,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zombie (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8400582562862437675, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10489,17 +10494,22 @@ PrefabInstance:
     - target: {fileID: 243697597033515858, guid: 484d6a384d6b95a449257b9e4fd2003c,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 243697597033515858, guid: 484d6a384d6b95a449257b9e4fd2003c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4349080128417467894, guid: 484d6a384d6b95a449257b9e4fd2003c,
         type: 3}
       propertyPath: m_Name
       value: Cyber Monster (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349080128417467894, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10779,6 +10789,84 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 691140597}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &696042409
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 636433214952224186, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 636433214952224186, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274318500649638122, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274318500649638122, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.092198014
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274318500649638122, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.7254386
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274318500649638122, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274318500649638122, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274318500649638122, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274318500649638122, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274318500649638122, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274318500649638122, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6274318500649638122, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8400582562862437675, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_Name
+      value: Zombie
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3efd9a2fcc272a4a981cdfc063f3499, type: 3}
 --- !u!4 &706803449 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013316604322, guid: f5c94d7d7f024eb43b7dd5258c0608d0,
@@ -12345,6 +12433,84 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 765197597}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &777246454
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 237620021025291352, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237620021025291352, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237620021025291352, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237620021025291352, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 237620021025291352, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237620021025291352, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237620021025291352, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237620021025291352, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237620021025291352, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 237620021025291352, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 243697597033515858, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 243697597033515858, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349080128417467894, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_Name
+      value: Cyber Monster
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 484d6a384d6b95a449257b9e4fd2003c, type: 3}
 --- !u!1001 &784332286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16012,12 +16178,12 @@ PrefabInstance:
     - target: {fileID: 243697597033515858, guid: 484d6a384d6b95a449257b9e4fd2003c,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 243697597033515858, guid: 484d6a384d6b95a449257b9e4fd2003c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1463109932381850361, guid: 484d6a384d6b95a449257b9e4fd2003c,
         type: 3}
@@ -16028,6 +16194,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cyber Monster
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349080128417467894, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7120950273580065540, guid: 484d6a384d6b95a449257b9e4fd2003c,
         type: 3}
@@ -27587,17 +27758,22 @@ PrefabInstance:
     - target: {fileID: 243697597033515858, guid: 484d6a384d6b95a449257b9e4fd2003c,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 243697597033515858, guid: 484d6a384d6b95a449257b9e4fd2003c,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4349080128417467894, guid: 484d6a384d6b95a449257b9e4fd2003c,
         type: 3}
       propertyPath: m_Name
       value: Cyber Monster (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349080128417467894, guid: 484d6a384d6b95a449257b9e4fd2003c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -34345,12 +34521,12 @@ PrefabInstance:
     - target: {fileID: 636433214952224186, guid: b3efd9a2fcc272a4a981cdfc063f3499,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 636433214952224186, guid: b3efd9a2fcc272a4a981cdfc063f3499,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6274318500649638122, guid: b3efd9a2fcc272a4a981cdfc063f3499,
         type: 3}
@@ -34406,6 +34582,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zombie (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8400582562862437675, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36491,12 +36672,12 @@ PrefabInstance:
     - target: {fileID: 636433214952224186, guid: b3efd9a2fcc272a4a981cdfc063f3499,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 636433214952224186, guid: b3efd9a2fcc272a4a981cdfc063f3499,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5516855790440590127, guid: b3efd9a2fcc272a4a981cdfc063f3499,
         type: 3}
@@ -36562,6 +36743,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 8400582562862437675, guid: b3efd9a2fcc272a4a981cdfc063f3499,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42984,7 +43170,6 @@ SceneRoots:
   - {fileID: 2040382331}
   - {fileID: 1839706828}
   - {fileID: 8871782952769130982}
-  - {fileID: 1141474952}
   - {fileID: 109601484}
   - {fileID: 1659750417}
   - {fileID: 3863731257669007648}
@@ -42993,6 +43178,9 @@ SceneRoots:
   - {fileID: 542021472}
   - {fileID: 387131001}
   - {fileID: 2559181148937359173}
-  - {fileID: 1623229813}
   - {fileID: 28885718}
   - {fileID: 901695990}
+  - {fileID: 1141474952}
+  - {fileID: 1623229813}
+  - {fileID: 696042409}
+  - {fileID: 777246454}

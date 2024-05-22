@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    // Weapon
     [SerializeField] private bool isActiveWeapon;
     [SerializeField] int weaponDamage;
 
@@ -115,7 +116,6 @@ public class Weapon : MonoBehaviour
     private void FireWeapon()
     {
         bulletsLeft--;
-
         muzzleEffect.GetComponent<ParticleSystem>().Play();
         animator.SetTrigger("Recoil");
         SoundManager.Instance.PlayShootingSound(thisWeaponModel);

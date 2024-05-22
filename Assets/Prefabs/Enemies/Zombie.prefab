@@ -2038,6 +2038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0753dea9f6258774a9e15966f8aa0cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
 --- !u!1 &4418839904327800061
 GameObject:
   m_ObjectHideFlags: 0
@@ -3717,11 +3718,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6274318500649638122}
+  - component: {fileID: -6540588970426803944}
   - component: {fileID: 3192502474699680889}
   - component: {fileID: 5516855790440590127}
   - component: {fileID: 9094506859475382806}
-  - component: {fileID: -6540588970426803944}
-  - component: {fileID: 2868343681830955480}
+  - component: {fileID: 5843074704863688560}
   m_Layer: 7
   m_Name: Zombie
   m_TagString: Enemy
@@ -3763,6 +3764,28 @@ Transform:
   - {fileID: 3824654547164699006}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &-6540588970426803944
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8400582562862437675}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.3
+  m_Speed: 1.5
+  m_Acceleration: 20
+  avoidancePriority: 50
+  m_AngularSpeed: 2000
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.7
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!95 &3192502474699680889
 Animator:
   serializedVersion: 5
@@ -3796,13 +3819,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6b5dbf54e130074d9bcc45af06c46ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnDelay: 3
   healthBar: {fileID: 5021737134836194758}
+  despawnDelay: 3
   player: {fileID: 0}
   path: {fileID: 2953473283997556473}
   sightDistance: 20
   fieldOfView: 85
   eyeHeight: 0
+  zombieHand: {fileID: 0}
+  zombieDamage: 0
 --- !u!114 &9094506859475382806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3815,30 +3840,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f69edab8e763c740a82542116aadd6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &-6540588970426803944
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8400582562862437675}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.3
-  m_Speed: 1.5
-  m_Acceleration: 20
-  avoidancePriority: 50
-  m_AngularSpeed: 2000
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.7
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!65 &2868343681830955480
-BoxCollider:
+--- !u!136 &5843074704863688560
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3855,9 +3858,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5, y: 1.5, z: 0.24935359}
-  m_Center: {x: 0, y: 0.75, z: -0.02183494}
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 1.7
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1 &8592503157062841553
 GameObject:
   m_ObjectHideFlags: 0

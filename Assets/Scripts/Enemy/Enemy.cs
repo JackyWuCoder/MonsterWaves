@@ -9,13 +9,14 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    // Death and Despawn Delay
-    protected Animator animator;
-    [SerializeField] protected float despawnDelay = 3.0f;
-
-    private const float MAXHEALTH = 100;
+    // Health
+    protected const float MAX_HEALTH = 100;
     protected float health;
     [SerializeField] protected Slider healthBar;
+
+    // Animator, Death and Despawn Delay
+    protected Animator animator;
+    [SerializeField] protected float despawnDelay = 3.0f;
 
     // NavMeshAgent
     protected NavMeshAgent agent;
@@ -49,10 +50,11 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        health = MAX_HEALTH;
         animator = GetComponent<Animator>();
+
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
-        health = MAXHEALTH;
         currentState = EnemyState.Idle;
     }
 
@@ -104,8 +106,7 @@ public class Enemy : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         health -= damage;
-        health = Mathf.Clamp(health, 0, MAXHEALTH);
-
+        health = Mathf.Clamp(health, 0, MAX_HEALTH);
         if (health <= 0)
         {
             int randomValue = Random.Range(0, 2); // 0,1

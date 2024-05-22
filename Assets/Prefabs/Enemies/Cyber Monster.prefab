@@ -3945,8 +3945,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 237620021025291352}
-  - component: {fileID: 1463109932381850361}
   - component: {fileID: 7022837142073018602}
+  - component: {fileID: 1463109932381850361}
   - component: {fileID: 7120950273580065540}
   - component: {fileID: 1948767489512284987}
   - component: {fileID: 5317388070628717058}
@@ -3980,27 +3980,6 @@ Transform:
   - {fileID: 4775205570021545637}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1463109932381850361
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4349080128417467894}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ffac060b1c1282641bb30bd1bc5ffbfb, type: 3}
-  m_Controller: {fileID: 9100000, guid: 691ffe1d4c3568b49b8f43ea2d6b6fe5, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!195 &7022837142073018602
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4023,6 +4002,27 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &1463109932381850361
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4349080128417467894}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: b3f4d625751197142928b2812ef0bedc, type: 2}
+  m_Controller: {fileID: 9100000, guid: 691ffe1d4c3568b49b8f43ea2d6b6fe5, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &7120950273580065540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4035,8 +4035,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5964d6ecba517c4299aba05d180a9fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  despawnDelay: 3
   healthBar: {fileID: 8575478954347807803}
+  despawnDelay: 3
   player: {fileID: 0}
   path: {fileID: 8847697294342228609}
   sightDistance: 20
