@@ -27,6 +27,8 @@ public class MonsterSpawnController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI cooldownCounterUI;
     [SerializeField] private TextMeshProUGUI currentWaveUI;
 
+    [SerializeField] private List<Transform> spawnPoints; // List of spawn points
+
     private void Start()
     {
         currentMonstersPerWave = initialMonstersPerWave;
@@ -86,20 +88,19 @@ public class MonsterSpawnController : MonoBehaviour
     {
         for (int i = 0; i < currentMonstersPerWave; i++)
         {
-            // Generate a random offset within a specified range
-            Vector3 spawnOffset = new Vector3(Random.Range(-1f, 1f), 0f, Random.Range(-1f, 1f));
-            Vector3 spawnPosition = transform.position + spawnOffset;
+            // Select a random spawn point from the list
+            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
 
             // Instantiate a Monster
             int randomNumber = Random.Range(0, 2);
             GameObject monster;
             if (randomNumber == 0)
             {
-                monster = Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
+                monster = Instantiate(zombiePrefab, spawnPoint.position, Quaternion.identity);
             }
             else
             {
-                monster = Instantiate(cyberMonsterPrefab, spawnPosition, Quaternion.identity);
+                monster = Instantiate(cyberMonsterPrefab, spawnPoint.position, Quaternion.identity);
             }
 
             // Get Enemy Script
@@ -117,13 +118,17 @@ public class MonsterSpawnController : MonoBehaviour
         inCooldown = true;
         waveOverUI.gameObject.SetActive(true);
         cooldownCounter = waveCooldown; // Set the counter to the wave cooldown time when cooldown starts
+
         while (cooldownCounter > 0)
         {
+            cooldownCounter -= Time.deltaTime;
+            cooldownCounterUI.text = cooldownCounter.ToString("F0");
             yield return null;
         }
+
         inCooldown = false;
         waveOverUI.gameObject.SetActive(false);
-        currentMonstersPerWave *= 2; // Double the number of monsters for the next wave
+        currentMonstersPerWave = initialMonstersPerWave; // Reset the number of monsters for the next wave
         StartNextWave();
     }
 }
