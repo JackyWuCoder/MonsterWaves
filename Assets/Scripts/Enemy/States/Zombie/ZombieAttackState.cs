@@ -5,7 +5,6 @@ using UnityEngine;
 public class ZombieAttackState : AttackState
 {
     private Zombie zombieEnemy;
-    public float stopAttackingDistance = 2.5f;
 
     public override void Enter()
     {
@@ -18,12 +17,6 @@ public class ZombieAttackState : AttackState
         if (SoundManager.Instance.zombieChannel.isPlaying == false)
         {
             SoundManager.Instance.zombieChannel.PlayOneShot(SoundManager.Instance.zombieAttack);
-        }
-        // Check if agent should stop attacking
-        float distanceFromPlayer = Vector3.Distance(player.position, enemy.animator.transform.position);
-        if (distanceFromPlayer > stopAttackingDistance)
-        {
-            enemy.animator.SetBool("isAttacking", false);
         }
         // Enemy can see the player.
         if (!enemy.CanSeePlayer())
