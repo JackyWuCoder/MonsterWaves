@@ -18732,7 +18732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1135364203
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26247,7 +26247,7 @@ GameObject:
   - component: {fileID: 1611010479}
   - component: {fileID: 1611010478}
   m_Layer: 5
-  m_Name: WaveOverTimer
+  m_Name: WaveOverCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35662,7 +35662,7 @@ MonoBehaviour:
     type: 3}
   cyberMonsterPrefab: {fileID: 4349080128417467894, guid: 484d6a384d6b95a449257b9e4fd2003c,
     type: 3}
-  titleWaveOver: {fileID: 1135364204}
+  waveOverUI: {fileID: 1135364204}
   cooldownCounterUI: {fileID: 1611010478}
 --- !u!1001 &2121344920
 PrefabInstance:
