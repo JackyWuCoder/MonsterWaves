@@ -69,7 +69,6 @@ public class Weapon : MonoBehaviour
         readyToShoot = true;
         burstBulletsLeft = bulletsPerBurst;
         animator = GetComponent<Animator>();
-
         bulletsLeft = magazineSize;
     }
 

@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem.Processors;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
@@ -14,6 +16,9 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Image frontHealthBar;
     [SerializeField] private Image backHealthBar;
     [SerializeField] TextMeshProUGUI healthText;
+
+    public GameObject gameOverUI;
+    public bool isDead;
 
     [Header("Damage Overlay")]
     [SerializeField] private Image overlay; // Our damage overlay gameobject.
@@ -82,7 +87,9 @@ public class PlayerHealth : MonoBehaviour
         overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, 1);
         if (health <= 0)
         {
+            UpdateHealthUI();
             PlayerDead();
+            isDead = true;
         }
     }
 
@@ -90,8 +97,10 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.CompareTag("ZombieHand"))
         {
-            Debug.Log("Getting Hit by ZombieHand");
-            TakeDamage(other.GetComponent<ZombieHand>().GetDamage());
+            if (isDead == false)
+            {
+                TakeDamage(other.GetComponent<ZombieHand>().GetDamage());
+            }
         }
     }
 
@@ -110,5 +119,13 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<PlayerUI>().enabled = false;
         // Dying Animation
         Camera.main.GetComponent<Animator>().enabled = true;
+        GetComponent<ScreenFader>().StartFade();
+        StartCoroutine(ShowGameOverUI());
+    }
+
+    private IEnumerator ShowGameOverUI()
+    {
+        yield return new WaitForSeconds(1f);
+        gameOverUI.gameObject.SetActive(true);
     }
 }

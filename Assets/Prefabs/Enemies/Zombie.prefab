@@ -3781,7 +3781,7 @@ MonoBehaviour:
   isDead: 0
   zombieLeftHand: {fileID: 5819843469164852541}
   zombieRightHand: {fileID: 7077648982185727591}
-  zombieDamage: 2
+  zombieDamage: 5
 --- !u!114 &9094506859475382806
 MonoBehaviour:
   m_ObjectHideFlags: 0

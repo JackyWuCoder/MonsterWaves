@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class CyberMonster : Enemy
 {
-    private int gunDamage = 10;
+    [SerializeField] private int gunDamage = 10;
 
     private CyberMonsterStateMachine stateMachine;
     [SerializeField] private GameObject bulletPrefab;
