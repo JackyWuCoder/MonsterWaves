@@ -4,23 +4,25 @@ using UnityEngine;
 
 public class MonsterSpawnController : MonoBehaviour
 {
-    public int initialMonstersPerWave = 5;
-    public int currentMonstersPerWave;
+    [SerializeField] private int initialMonstersPerWave = 5;
+    private int currentMonstersPerWave;
 
-    public float spawnDelay = 0.5f; // Delay between spawning each zombie in a wave;
+    [SerializeField] private float spawnDelay = 0.5f; // Delay between spawning each zombie in a wave
 
-    public int currentWave = 0;
-    public float waveCooldown = 10.0f; // Time in seconds between waves;
+    [SerializeField] private int currentWave = 0;
 
-    public bool inCooldown;
-    public float cooldownCounter = 0; // Used for testing and UI
+    [SerializeField] private float waveCooldown = 10.0f; // Time in seconds between waves
 
-    public List<Enemy> currentMonstersAlive;
+    private bool inCooldown;
+    private float cooldownCounter = 0; // Used for testing and UI
 
-    public GameObject zombiePrefab;
-    public GameObject cyberMonsterPrefab;
+    private List<Enemy> currentMonstersAlive = new List<Enemy>();
 
-    public void Start()
+    [SerializeField] private GameObject zombiePrefab;
+
+    [SerializeField] private GameObject cyberMonsterPrefab;
+
+    private void Start()
     {
         currentMonstersPerWave = initialMonstersPerWave;
         StartNextWave();
@@ -38,16 +40,14 @@ public class MonsterSpawnController : MonoBehaviour
             }
         }
 
-        // Actually remove all dead monstesrs
-        foreach (Enemy monster in currentMonstersAlive)
+        // Actually remove all dead monsters
+        foreach (Enemy monster in monstersToRemove)
         {
             currentMonstersAlive.Remove(monster);
         }
 
-        monstersToRemove.Clear();
-
         // Start Cooldown if all monsters are dead
-        if (currentMonstersAlive.Count == 0 && inCooldown == false)
+        if (currentMonstersAlive.Count == 0 && !inCooldown)
         {
             // Start cooldown for next wave
             StartCoroutine(WaveCooldown());
@@ -56,7 +56,7 @@ public class MonsterSpawnController : MonoBehaviour
         // Run the cooldown counter
         if (inCooldown)
         {
-            cooldownCounter = Time.deltaTime;
+            cooldownCounter += Time.deltaTime;
         }
         else
         {
@@ -104,9 +104,10 @@ public class MonsterSpawnController : MonoBehaviour
     private IEnumerator WaveCooldown()
     {
         inCooldown = true;
+        cooldownCounter = 0; // Reset the counter when cooldown starts
         yield return new WaitForSeconds(waveCooldown);
         inCooldown = false;
-        currentMonstersPerWave *= 2; /// 5*2 = 10 10*2 = 20
+        currentMonstersPerWave *= 2; // Double the number of monsters for the next wave
         StartNextWave();
     }
 }
