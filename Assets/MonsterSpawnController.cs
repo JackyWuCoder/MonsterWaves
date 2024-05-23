@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MonsterSpawnController : MonoBehaviour
@@ -21,6 +22,9 @@ public class MonsterSpawnController : MonoBehaviour
     [SerializeField] private GameObject zombiePrefab;
 
     [SerializeField] private GameObject cyberMonsterPrefab;
+
+    [SerializeField] private TextMeshProUGUI waveOverUI;
+    [SerializeField] private TextMeshProUGUI cooldownCounterUI;
 
     private void Start()
     {
@@ -62,6 +66,7 @@ public class MonsterSpawnController : MonoBehaviour
         {
             cooldownCounter = waveCooldown;
         }
+        cooldownCounterUI.text = cooldownCounter.ToString();
     }
 
     private void StartNextWave()
@@ -104,9 +109,11 @@ public class MonsterSpawnController : MonoBehaviour
     private IEnumerator WaveCooldown()
     {
         inCooldown = true;
+        waveOverUI.gameObject.SetActive(true);
         cooldownCounter = 0; // Reset the counter when cooldown starts
         yield return new WaitForSeconds(waveCooldown);
         inCooldown = false;
+        waveOverUI.gameObject.SetActive(false);
         currentMonstersPerWave *= 2; // Double the number of monsters for the next wave
         StartNextWave();
     }
