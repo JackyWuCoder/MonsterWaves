@@ -4042,6 +4042,8 @@ MonoBehaviour:
   sightDistance: 20
   fieldOfView: 85
   eyeHeight: 0
+  isDead: 0
+  gunDamage: 10
   bulletPrefab: {fileID: 5889881572303368012, guid: ba169e95265e4eb4483e60a8698c8e69,
     type: 3}
   bulletVelocity: 40
@@ -4054,7 +4056,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4349080128417467894}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5c6b2e3262354a4785cff92113c0b8d, type: 3}
   m_Name: 

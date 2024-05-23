@@ -140,7 +140,7 @@ public class PlayerHealth : MonoBehaviour
 
     private IEnumerator ReturnToMainMenu()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("MainMenu");
     }
 }
