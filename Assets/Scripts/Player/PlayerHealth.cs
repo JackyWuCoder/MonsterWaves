@@ -127,5 +127,8 @@ public class PlayerHealth : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         gameOverUI.gameObject.SetActive(true);
+
+        int waveSurvived = GlobalReferences.Instance.waveNumber;
+        SaveLoadManager.Instance.SaveHighScore(waveSurvived-1);
     }
 }

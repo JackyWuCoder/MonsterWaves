@@ -32,6 +32,7 @@ public class MonsterSpawnController : MonoBehaviour
     private void Start()
     {
         currentMonstersPerWave = initialMonstersPerWave;
+        GlobalReferences.Instance.waveNumber = currentWave;
         StartNextWave();
     }
 
@@ -80,6 +81,7 @@ public class MonsterSpawnController : MonoBehaviour
     {
         currentMonstersAlive.Clear();
         currentWave++;
+        GlobalReferences.Instance.waveNumber = currentWave;
         currentWaveUI.text = "Wave: " + currentWave.ToString();
         StartCoroutine(SpawnWave());
     }
