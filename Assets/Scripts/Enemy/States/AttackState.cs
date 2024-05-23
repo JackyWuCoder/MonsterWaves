@@ -9,7 +9,8 @@ public class AttackState : BaseState
 
     public override void Enter()
     {
-        
+        // Initialization
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public override void Perform()
@@ -36,6 +37,6 @@ public class AttackState : BaseState
 
     public override void Exit()
     {
-
+        
     }
 }

@@ -6,6 +6,7 @@ public class CyberMonsterAttackState : AttackState
 {
     private CyberMonster cyberEnemy;
     private float shotTimer;
+    public float stopAttackingDistance = 2.5f;
 
     public override void Enter()
     {
@@ -15,6 +16,16 @@ public class CyberMonsterAttackState : AttackState
     public override void Perform()
     {
         base.Perform();
+        if (SoundManager.Instance.cyberMonsterChannel.isPlaying == false)
+        {
+            SoundManager.Instance.cyberMonsterChannel.PlayOneShot(SoundManager.Instance.cyberMonsterAttack);
+        }
+        // Check if agent should stop attacking
+        float distanceFromPlayer = Vector3.Distance(player.position, enemy.animator.transform.position);
+        if (distanceFromPlayer > stopAttackingDistance)
+        {
+            enemy.animator.SetBool("isAttacking", false);
+        }
         // Enemy can see the player.
         if (enemy.CanSeePlayer())
         {
@@ -35,5 +46,10 @@ public class CyberMonsterAttackState : AttackState
                 stateMachine.ChangeState(new CyberMonsterSearchState());
             }
         }
+    }
+
+    public override void Exit()
+    {
+        SoundManager.Instance.cyberMonsterChannel.Stop();
     }
 }

@@ -1,8 +1,11 @@
-public abstract class BaseState
+using UnityEngine;
+using UnityEngine.AI;
+
+public abstract class BaseState : MonoBehaviour
 {
-    // public for testing
-    public Enemy enemy; 
+    protected Enemy enemy; 
     protected StateMachine stateMachine;
+    protected Transform player;
 
     // Initialize game properties, similar to Start() method.
     public abstract void Enter();

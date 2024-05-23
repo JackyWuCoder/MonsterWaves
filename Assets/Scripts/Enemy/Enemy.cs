@@ -15,11 +15,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected Slider healthBar;
 
     // Animator, Death and Despawn Delay
-    protected Animator animator;
+    public Animator animator;
     [SerializeField] protected float despawnDelay = 3.0f;
 
     // NavMeshAgent
-    protected NavMeshAgent agent;
+    public NavMeshAgent agent;
     [SerializeField] protected GameObject player;
     [SerializeField] protected Path path;
     private Vector3 lastSeenPlayerPos;
