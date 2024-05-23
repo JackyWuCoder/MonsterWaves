@@ -15,7 +15,7 @@ public class MonsterSpawnController : MonoBehaviour
     [SerializeField] private float waveCooldown = 10.0f; // Time in seconds between waves
 
     private bool inCooldown;
-    private float cooldownCounter = 0; // Used for testing and UI
+    private float cooldownCounter; // Used for testing and UI
 
     private List<Enemy> currentMonstersAlive = new List<Enemy>();
 
@@ -25,6 +25,7 @@ public class MonsterSpawnController : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI waveOverUI;
     [SerializeField] private TextMeshProUGUI cooldownCounterUI;
+    [SerializeField] private TextMeshProUGUI currentWaveUI;
 
     private void Start()
     {
@@ -60,19 +61,24 @@ public class MonsterSpawnController : MonoBehaviour
         // Run the cooldown counter
         if (inCooldown)
         {
-            cooldownCounter += Time.deltaTime;
+            cooldownCounter -= Time.deltaTime;
+            if (cooldownCounter < 0)
+            {
+                cooldownCounter = 0;
+            }
         }
         else
         {
             cooldownCounter = waveCooldown;
         }
-        cooldownCounterUI.text = cooldownCounter.ToString();
+        cooldownCounterUI.text = cooldownCounter.ToString("F0");
     }
 
     private void StartNextWave()
     {
         currentMonstersAlive.Clear();
         currentWave++;
+        currentWaveUI.text = "Wave: " + currentWave.ToString();
         StartCoroutine(SpawnWave());
     }
 
@@ -110,8 +116,11 @@ public class MonsterSpawnController : MonoBehaviour
     {
         inCooldown = true;
         waveOverUI.gameObject.SetActive(true);
-        cooldownCounter = 0; // Reset the counter when cooldown starts
-        yield return new WaitForSeconds(waveCooldown);
+        cooldownCounter = waveCooldown; // Set the counter to the wave cooldown time when cooldown starts
+        while (cooldownCounter > 0)
+        {
+            yield return null;
+        }
         inCooldown = false;
         waveOverUI.gameObject.SetActive(false);
         currentMonstersPerWave *= 2; // Double the number of monsters for the next wave
