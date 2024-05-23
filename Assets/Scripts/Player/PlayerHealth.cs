@@ -82,11 +82,7 @@ public class PlayerHealth : MonoBehaviour
         overlay.color = new Color(overlay.color.r, overlay.color.g, overlay.color.b, 1);
         if (health <= 0)
         {
-            print("Player Dead");
-        }
-        else
-        {
-            print("Player Hit");
+            PlayerDead();
         }
     }
 
@@ -103,5 +99,16 @@ public class PlayerHealth : MonoBehaviour
     {
         health += healAmount;
         lerpTimer = 0f;
+    }
+
+    private void PlayerDead()
+    {
+        GetComponent<PlayerHealth>().enabled = false;
+        GetComponent<PlayerInputManager>().enabled = false;
+        GetComponent<PlayerInteract>().enabled = false;
+        GetComponent<PlayerSprintBar>().enabled = false;
+        GetComponent<PlayerUI>().enabled = false;
+        // Dying Animation
+        Camera.main.GetComponent<Animator>().enabled = true;
     }
 }

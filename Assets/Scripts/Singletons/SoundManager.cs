@@ -17,6 +17,19 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource emptyMagazineSoundPistol1;
 
+    public AudioSource zombieChannel;
+    public AudioClip zombieWalking;
+    public AudioClip zombieChase;
+    public AudioClip zombieAttack;
+    public AudioClip zombieDeath;
+
+    public AudioSource cyberMonsterChannel;
+    public AudioClip cyberMonsterWalking;
+    public AudioClip cyberMonsterChase;
+    public AudioClip cyberMonsterAttack;
+    public AudioClip cyberMonsterDeath;
+
+
     private void Awake()
     {
         if (Instance != null && Instance != this)

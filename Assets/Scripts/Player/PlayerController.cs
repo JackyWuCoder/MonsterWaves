@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Jobs;
 using UnityEngine;
+using UnityEngine.Rendering.Universal.Internal;
 
 public class PlayerController : MonoBehaviour
 {
@@ -154,5 +155,16 @@ public class PlayerController : MonoBehaviour
         {
             speed = 5.0f;
         }
+    }
+
+    private void PlayerDead()
+    {
+        GetComponent<PlayerHealth>().enabled = false;
+        GetComponent<PlayerInputManager>().enabled = false;
+        GetComponent<PlayerInteract>().enabled = false;
+        GetComponent<PlayerSprintBar>().enabled = false;
+        GetComponent<PlayerUI>().enabled = false;
+        // Dying Animation
+        Camera.main.GetComponent<Animator>().enabled = true;
     }
 }

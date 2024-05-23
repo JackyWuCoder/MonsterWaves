@@ -33,6 +33,7 @@ public class Zombie : Enemy
             {
                 animator.SetTrigger("DIE2");
             }
+            SoundManager.Instance.zombieChannel.PlayOneShot(SoundManager.Instance.zombieDeath);
             // Game Over
             // Respawn Player
             // Play the death animation

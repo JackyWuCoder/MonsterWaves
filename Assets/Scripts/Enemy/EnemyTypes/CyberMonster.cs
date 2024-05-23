@@ -44,6 +44,7 @@ public class CyberMonster : Enemy
         {
              animator.SetTrigger("DIE");
         }
+        SoundManager.Instance.cyberMonsterChannel.PlayOneShot(SoundManager.Instance.cyberMonsterDeath);
         // Game Over
         // Respawn Player
         // Play the death animation
