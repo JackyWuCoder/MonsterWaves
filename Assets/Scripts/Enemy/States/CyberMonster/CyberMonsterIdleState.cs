@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class CyberMonsterIdleState : BaseState
 {
-    [SerializeField] private float idleTime = 0f;
+    [SerializeField] private float idleTime = 4f;
     [SerializeField] private float detectionAreaRadius = 18f;
 
     private float timer;
-    private Transform player;
 
     public override void Enter()
     {
         timer = 0;
-        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public override void Perform()
@@ -27,7 +25,7 @@ public class CyberMonsterIdleState : BaseState
         }
 
         // Transition to Chase State
-        float distanceFromPlayer = Vector3.Distance(player.position, enemy.animator.transform.position);
+        float distanceFromPlayer = Vector3.Distance(enemy.player.transform.position, enemy.animator.transform.position);
         if (distanceFromPlayer < detectionAreaRadius)
         {
             enemy.animator.SetBool("isChasing", true);

@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class ZombiePatrolState1 : StateMachineBehaviour
 {
-    [SerializeField] private float patrolTime = 10f;
+    // [SerializeField] private float patrolTime = 10f;
     [SerializeField] private float detectionAreaRadius = 18f;
     [SerializeField] private float patrolSpeed = 2f;
 

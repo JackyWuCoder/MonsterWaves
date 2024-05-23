@@ -237,7 +237,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff74ee94492ca254ea985d30a458e9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolTime: 10
   detectionAreaRadius: 18
   patrolSpeed: 1.5
 --- !u!91 &9100000

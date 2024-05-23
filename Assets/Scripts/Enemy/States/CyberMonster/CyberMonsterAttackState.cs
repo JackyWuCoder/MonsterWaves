@@ -7,6 +7,8 @@ public class CyberMonsterAttackState : AttackState
     private CyberMonster cyberEnemy;
     private float shotTimer;
 
+    public float stopAttackingDistance = 10f;
+
     public override void Enter()
     {
         cyberEnemy = (CyberMonster)enemy;
@@ -19,8 +21,10 @@ public class CyberMonsterAttackState : AttackState
         {
             SoundManager.Instance.cyberMonsterChannel.PlayOneShot(SoundManager.Instance.cyberMonsterAttack);
         }
+        LookAtPlayer();
+        float distanceFromPlayer = Vector3.Distance(enemy.player.transform.position, enemy.animator.transform.position);
         // Enemy can see the player.
-        if (enemy.CanSeePlayer())
+        if (enemy.CanSeePlayer() || distanceFromPlayer < stopAttackingDistance)
         {
             // Increment the shotTimer;
             shotTimer += Time.deltaTime;
@@ -36,9 +40,19 @@ public class CyberMonsterAttackState : AttackState
             {
                 // Change to the search state
                 // stateMachine.ChangeState(new CyberMonsterPatrolState());
-                stateMachine.ChangeState(new CyberMonsterSearchState());
+                enemy.animator.SetBool("isAttacking", false);
+                stateMachine.ChangeState(new CyberMonsterChaseState());
             }
         }
+    }
+
+    private void LookAtPlayer()
+    {
+        Vector3 direction = enemy.player.transform.position - enemy.agent.transform.position;
+        enemy.agent.transform.rotation = Quaternion.LookRotation(direction);
+
+        var yRotation = enemy.agent.transform.eulerAngles.y;
+        enemy.agent.transform.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 
     public override void Exit()

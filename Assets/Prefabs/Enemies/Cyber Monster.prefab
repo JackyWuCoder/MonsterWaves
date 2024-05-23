@@ -4036,7 +4036,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 8575478954347807803}
+  animator: {fileID: 1463109932381850361}
   despawnDelay: 3
+  agent: {fileID: 7022837142073018602}
   player: {fileID: 0}
   path: {fileID: 8847697294342228609}
   sightDistance: 20

@@ -6,37 +6,30 @@ public class CyberMonsterPatrolState : PatrolState
 {
     [SerializeField] private float patrolTime = 10f;
     [SerializeField] private float detectionAreaRadius = 18f;
-    [SerializeField] private float patrolSpeed = 2f;
+    [SerializeField] private float patrolSpeed = 1.5f;
 
-    private Transform player;
     private float timer;
 
     public override void Perform()
     {
         base.Perform();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
         enemy.agent.speed = patrolSpeed;
         timer = 0;
         if (SoundManager.Instance.cyberMonsterChannel.isPlaying == false)
         {
-            SoundManager.Instance.cyberMonsterChannel.clip = SoundManager.Instance.zombieWalking;
+            SoundManager.Instance.cyberMonsterChannel.clip = SoundManager.Instance.cyberMonsterWalking;
             SoundManager.Instance.cyberMonsterChannel.PlayDelayed(1f);
-        }
-        if (enemy.CanSeePlayer())
-        {
-            stateMachine.ChangeState(new CyberMonsterAttackState());
         }
         // Transition to Idle State
         timer += Time.deltaTime;
-        if (timer > 0)
+        if (timer > patrolTime)
         {
             enemy.animator.SetBool("isPatrolling", false);
             stateMachine.ChangeState(new CyberMonsterIdleState());
         }
-
         // Transition to Chase State
-        float distanceFromPlayer = Vector3.Distance(player.position, enemy.animator.transform.position);
-        if (distanceFromPlayer < detectionAreaRadius)
+        float distanceFromPlayer = Vector3.Distance(enemy.player.transform.position, enemy.animator.transform.position);
+        if (enemy.CanSeePlayer() || distanceFromPlayer < detectionAreaRadius)
         {
             enemy.animator.SetBool("isChasing", true);
             stateMachine.ChangeState(new CyberMonsterChaseState());
@@ -48,6 +41,6 @@ public class CyberMonsterPatrolState : PatrolState
         base.Exit();
         // Stop the agent
         enemy.agent.SetDestination(enemy.agent.transform.position);
-        SoundManager.Instance.zombieChannel.Stop();
+        SoundManager.Instance.cyberMonsterChannel.Stop();
     }
 }

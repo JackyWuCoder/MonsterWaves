@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool isGrounded;
-    private bool isMoving;
+    //private bool isMoving;
     private float xRotation = 0f;
     private Vector3 lastPosition = new Vector3(0f, 0f, 0f);
 
@@ -80,12 +80,12 @@ public class PlayerController : MonoBehaviour
         }
         if ((lastPosition != gameObject.transform.position) && (isGrounded == true))
         {
-            isMoving = true;
+            //isMoving = true;
             // for later use.
         }
         else 
         {
-            isMoving = false;
+            //isMoving = false;
             // for later use.
         }
         lastPosition = gameObject.transform.position;

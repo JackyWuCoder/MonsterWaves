@@ -6,7 +6,7 @@ public class CyberMonsterStateMachine : StateMachine
 {
     public override void Awake()
     {
-        ChangeState(new CyberMonsterPatrolState());
+        ChangeState(new CyberMonsterIdleState());
     }
 
     public override void Update()

@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
 
     // NavMeshAgent
     public NavMeshAgent agent;
-    [SerializeField] protected GameObject player;
+    public GameObject player;
     [SerializeField] protected Path path;
     private Vector3 lastSeenPlayerPos;
     
@@ -38,17 +38,6 @@ public class Enemy : MonoBehaviour
         get => lastSeenPlayerPos; set => lastSeenPlayerPos = value;
     }
 
-    protected enum EnemyState
-    { 
-        Idle,
-        Patrol,
-        Attack,
-        Seek,
-        Dead
-    }
-
-    protected EnemyState currentState;
-
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -56,7 +45,6 @@ public class Enemy : MonoBehaviour
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
-        currentState = EnemyState.Idle;
     }
 
     // Update is called once per frame
@@ -116,7 +104,6 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             isDead = true;
-            currentState = EnemyState.Dead;
             // Perform any cleanup or death animations here.
             // animator.Play("Death");
             return; // Exit Update function if enemy is dead.
