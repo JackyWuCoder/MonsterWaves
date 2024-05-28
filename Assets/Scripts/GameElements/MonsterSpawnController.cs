@@ -130,7 +130,8 @@ public class MonsterSpawnController : MonoBehaviour
 
         inCooldown = false;
         waveOverUI.gameObject.SetActive(false);
-        currentMonstersPerWave = initialMonstersPerWave; // Reset the number of monsters for the next wave
+        // currentMonstersPerWave = initialMonstersPerWave; // Reset the number of monsters for the next wave
+        currentMonstersPerWave = currentMonstersPerWave + 2;
         StartNextWave();
     }
 }
