@@ -1,2 +1,2 @@
 # MonsterWaves
- Unity3D Unit 6 : Capstone Project (Circuit Stream Bootcamp)
+ Unity3D Unit 6 : FPS Wave Survival Game Capstone Project (Circuit Stream Bootcamp)
